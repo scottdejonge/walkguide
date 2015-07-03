@@ -20,21 +20,28 @@
 	}
 }
 
-// Post Header
-.post-header {
+// Post Image
+.post-image {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 60px;
+	.square(60px);
+	background: @dark;
+	border-radius: 100px;
 
 	@media @xsmall {
-		width: 30px;
+		.square(30px);
+	}
+
+	.icon {
+		.center();
+		fill: @white;
 	}
 }
 
-.post-header-image  {
-	border-radius: 100px;
-	background: @dark;
+// Post Header
+.post-header {
+	
 }
 
 // Post Content
