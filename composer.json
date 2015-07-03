@@ -1,0 +1,6 @@
+{
+	"name": "walkguide",
+	"require": {
+		"cakephp/cakephp": "2.5.*"
+	}
+}
