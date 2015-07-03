@@ -1,63 +1,86 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
-?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
-
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Walk Guide</title>
+	<link rel="stylesheet" type="text/css" href="/generated/styles/styles.css" />
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
+	
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<script type="text/javascript" src="/generated/scripts/scripts.js"></script>
 </body>
+</html>
+
+<?php
+
+	// Browser Detection
+	$is_ie = preg_match('/msie\s*([\d.]+)/i', env('HTTP_USER_AGENT'), $ie_version);
+	$ie_version = ($is_ie? (float)($ie_version[1]): 0);
+	
+?><!DOCTYPE html>
+<html lang="en">
+	<head>
+		<?php
+			// Meta
+			echo $this->Html->charset('utf-8');
+			echo $this->Html->meta(array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge,chrome=1'));
+			echo $this->Html->meta(array('name' => 'apple-mobile-web-app-title', 'content' => h(Configure::read('Site.Name'))));
+			echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'));
+			echo $this->Html->meta(array('name' => 'description', 'content' => h(Configure::read('Site.Description'))));
+			
+			//Title
+			echo '<title>' . h(Configure::read('Site.Name')) . ' - ' . h($title_for_layout) . '</title>';
+			
+			// Open Graph
+			echo $this->Html->meta(array('property' => 'og:site_name', 'type' => 'meta', 'content' => h(Configure::read('Site.Name')), 'rel' => null));
+			echo $this->Html->meta(array('property' => 'og:url', 'type' => 'meta', 'content' => h(Router::url($this->here, true)), 'rel' => null));
+			echo $this->Html->meta(array('property' => 'og:type', 'type' => 'meta', 'content' => 'website', 'rel' => null));
+			echo $this->Html->meta(array('property' => 'og:title', 'type' => 'meta', 'content' => h($title_for_layout), 'rel' => null));
+			if (isset($og_image)) {
+				echo $this->Html->meta(array('property' => 'og:image', 'type' => 'meta', 'content' => Router::url($og_image, true), 'rel' => null));
+			} else {
+				echo $this->Html->meta(array('property' => 'og:image', 'type' => 'meta', 'content' => Router::url('/assets/img/hero.jpg', true), 'rel' => null));
+			}
+			if (isset($og_description)) {
+				echo $this->Html->meta(array('property' => 'og:description', 'type' => 'meta', 'content' => h($og_description), 'rel' => null));
+			}
+			echo $this->fetch('meta');
+			
+			// Favicon
+			echo $this->Html->meta(
+				'favicon',
+				'/assets/ico/favicon.ico',
+				array('type' => 'icon')
+			);
+			echo $this->Html->meta(
+				'favicon',
+				'/assets/ico/favicon.ico',
+				array('type' => 'shortcut icon')
+			);
+
+			// Styles
+			echo $this->Html->css('/generated/styles/styles.css', array('inline' => false));
+			echo $this->fetch('css');
+
+			// Scripts
+			echo $this->Html->script('/lib/svg4everybody.min.js');
+		?>
+	</head>
+	<body>
+		<?php
+			echo $this->fetch('content');
+			//echo $this->element('navigation');
+		?>
+	</body>
+	
+	<?php
+		// Scripts
+		echo $this->Html->script('/generated/scripts/scripts.js', array('inline' => false));
+		echo $this->fetch('script');
+	?>
 </html>
