@@ -12,9 +12,34 @@
 
 	<header class="header">
 		<div class="container">
-			<div class="header-content">
-				<h1 class="header-title">Walk Name</h1>
-				<h2 class="header-subtitle">National Park</h2>
+			<button class="header-button">
+				<svg class="icon icon-white" viewBox="0 0 24 24">
+					<use xlink:href="/assets/icons/defs.svg#icon-arrow-back"></use>
+				</svg>
+				<span class="hidden-xsmall">Back to results</span>
+			</button>
+			<div class="header-controls button-group right">
+				<button class="header-button">
+					<svg class="icon icon-white" viewBox="0 0 24 24">
+						<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
+					</svg>
+					<span class="hidden-xsmall">Favourite</span>
+				</button>
+				<button class="header-button">
+					<svg class="icon icon-white" viewBox="0 0 24 24">
+						<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
+					</svg>
+					<span class="hidden-xsmall">Share</span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<section class="page-header">
+		<div class="container">
+			<div class="page-header-content">
+				<h1 class="page-header-title">Walk Name</h1>
+				<h2 class="page-header-subtitle">National Park</h2>
 				<div class="rating">
 					<svg class="icon icon-white" viewBox="0 0 24 24">
 						<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
@@ -33,22 +58,9 @@
 					</svg>
 				</div>
 			</div>
-			<div class="header-controls">
-				<div class="button-group">
-					<button class="">
-						<svg class="icon icon-white" viewBox="0 0 24 24">
-							<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-						</svg>
-					</button>
-					<button>
-						<svg class="icon icon-white" viewBox="0 0 24 24">
-							<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-						</svg>
-					</button>
-				</div>
-			</div>
+			
 		</div>
-	</header>
+	</section>
 
 	<section class="map">
 		<div class="map-canvas" data-map></div>
@@ -58,7 +70,7 @@
 		<div class="container">
 			<div class="button-group-block">
 				<div class="button-group">
-					<button>All</button>
+					<button class="active">All</button>
 				</div>
 				<div class="button-group">
 					<button>Ratings</button>

@@ -4,30 +4,40 @@
 
 // Header
 .header {
+	padding: 5px 0px;
+	height: 50px;
 	background: @primary;
 }
 
-.header-content {
-	padding: 100px 0px;
-}
-
+// Header Controls
 .header-controls {
-	position: absolute;
-	top: @gutter;
-	right: @gutter / 2;
+	float: right;
+
+	.header-button {
+		padding: 8px;
+	}
 }
 
-// Header Titles
-.header-title,
-.header-subtitle  {
-	margin: 0;
-	color: @white;
-}
+// Header Button
+.header-button {
+	padding: 8px 0;
+	color: darken(@primary, 10%);
+	background: transparent;
+	border: none;
 
-.header-title {
-	
-}
+	.icon {
+		fill: darken(@primary, 10%);
+		vertical-align: middle;
+	}
 
-.header-subtitle {
-	
+	&:not(:disabled):hover,
+	&:not(:disabled):focus {
+		color: @white;
+		background: transparent;
+		border: none;
+
+		.icon {
+			fill: @white;
+		}
+	}
 }

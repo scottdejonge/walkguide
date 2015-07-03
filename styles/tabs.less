@@ -4,10 +4,20 @@
 
 // Tabs
 .tabs {
-	background: @light-grey;
+	background: @white;
 
 	button {
+		background: none;
+		border: none;
 		border-radius: 0;
+
+		&:hover,
+		&:focus,
+		&.active {
+			color: @primary;
+			background: none;
+			border: none;
+		}
 	}
 }
 
