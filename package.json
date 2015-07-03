@@ -19,15 +19,15 @@
     "browser-sync": "2.0.1"
   },
   "scripts": {
-    "sync": "browser-sync start --proxy \"dev.walkguide\" --files \"generated/styles/*.css\"",
+    "sync": "browser-sync start --proxy \"dev.walkguide\" --files \"app/webroot/generated/styles/*.css\"",
     "watch:styles": "watch \"npm run build:styles\" \"styles\"",
     "watch:scripts": "watch \"npm run build:scripts\" \"scripts\"",
     "watch": "npm run watch:styles & npm run watch:scripts & npm run sync",
-    "build:styles": "lessc -s --include-path=\"node_modules/bigfishtv-turret\" styles/styles.less > generated/styles/styles.css",
-    "build:scripts": "browserify scripts/scripts.js > generated/scripts/scripts.js",
+    "build:styles": "lessc -s --include-path=\"node_modules/bigfishtv-turret\" styles/styles.less > app/webroot/generated/styles/styles.css",
+    "build:scripts": "browserify scripts/scripts.js > app/webroot/generated/scripts/scripts.js",
     "build": "npm run build:styles && npm run build:scripts",
-    "deploy:styles": "lessc -x --include-path=\"node_modules/bigfishtv-turret\" styles/styles.less > generated/styles/styles.css",
-    "deploy:scripts": "browserify scripts/scripts.js | uglifyjs -c > generated/scripts/scripts.js",
+    "deploy:styles": "lessc -x --include-path=\"node_modules/bigfishtv-turret\" styles/styles.less > app/webroot/generated/styles/styles.css",
+    "deploy:scripts": "browserify scripts/scripts.js | uglifyjs -c > app/webroot/generated/scripts/scripts.js",
     "deploy": "npm run deploy:styles && npm run deploy:scripts"
   },
   "browserify": {
