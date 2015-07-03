@@ -81,7 +81,38 @@
 			<article class="post">
 				<header class="post-header">
 					<div class="post-header-image media media-1">
-						<img class="circle" src="">
+						
+					</div>
+				</header>
+				<div class="post-content">
+					<h3 class="post-title">John Doe</h3>
+					<div class="rating">
+						<svg class="icon" viewBox="0 0 24 24">
+							<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
+						</svg>
+						<svg class="icon" viewBox="0 0 24 24">
+							<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
+						</svg>
+						<svg class="icon" viewBox="0 0 24 24">
+							<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
+						</svg>
+						<svg class="icon" viewBox="0 0 24 24">
+							<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
+						</svg>
+						<svg class="icon" viewBox="0 0 24 24">
+							<use xlink:href="/assets/icons/defs.svg#icon-star-half"></use>
+						</svg>
+					</div>
+				</div>
+				<footer class="post-footer">
+					
+				</footer>
+			</article>
+
+			<article class="post">
+				<header class="post-header">
+					<div class="post-header-image media media-1">
+						
 					</div>
 				</header>
 				<div class="post-content">
@@ -96,7 +127,7 @@
 			<article class="post">
 				<header class="post-header">
 					<div class="post-header-image media media-1">
-						<img class="circle" src="">
+						
 					</div>
 				</header>
 				<div class="post-content">
@@ -113,7 +144,7 @@
 			<article class="post">
 				<header class="post-header">
 					<div class="post-header-image media media-1">
-						<img class="circle" src="">
+						
 					</div>
 				</header>
 				<div class="post-content">
