@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Walk Guide</title>
 	<link rel="stylesheet" type="text/css" href="/generated/styles/styles.css" />
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 </head>
 <body>
 
@@ -50,7 +51,7 @@
 	</header>
 
 	<section class="map">
-
+		<div class="map-canvas" data-map></div>
 	</section>
 	
 	<section class="tabs">
