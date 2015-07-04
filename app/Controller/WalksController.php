@@ -26,7 +26,7 @@ class WalksController extends AppController {
 
 	public function index() {
 		$walks = $this->Walk->find('all', array(
-			//'limit' => 500,
+			'limit' => 100,
 			'contain' => array(
 				'name',
 				'owner',
