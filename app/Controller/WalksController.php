@@ -25,8 +25,8 @@ class WalksController extends AppController {
 	}
 
 	public function index() {
-		$walks = $this->Walk->find('all', array(
-			'limit' => 100,
+		$this->paginate = array(
+			'limit' => 20,
 			'contain' => array(
 				'name',
 				'owner',
@@ -38,9 +38,10 @@ class WalksController extends AppController {
 				'not' => array('Walk.name' => null),
 				'Walk.type' => 'Walking Track',
 			),
-		));
+			'order' => array('id' => 'desc')
+		);
 
-		//pr($walks); die;
+		$walks = $this->paginate('Walk');
 
 		$this->set(compact('walks'));
 	}

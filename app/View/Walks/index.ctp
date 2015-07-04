@@ -34,8 +34,38 @@
 <section class="tiles">
 	<div class="container">
 		<?php
-			foreach ($walks as $walk) {
-				echo $this->element('tile', array('walk' => $walk));
+			$paginator = $this->Paginator;
+
+			if ($walks) {
+
+				foreach ($walks as $walk) {
+					echo $this->element('tile', array('walk' => $walk));
+				}
+
+				// Pagination
+				echo '<div class="pagination">';
+
+					echo $paginator->first('First');
+
+					if( $paginator->hasPrev()) {
+						echo $paginator->prev('Prev');
+					}
+
+					echo $paginator->numbers(array(
+						'modulus' => 2,
+						'separator' => '',
+						'currentClass' => 'active',
+					));
+
+					if ($paginator->hasNext()) {
+						echo $paginator->next('Next');
+					}
+					echo $paginator->last('Last');
+
+				echo '</div>';
+
+			} else {
+				echo 'No Walks found.';
 			}
 		?>
 	</div>
