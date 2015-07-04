@@ -17,13 +17,13 @@
 
 <section class="tiles">
 	<div class="container">
-		<h2>Featured Walks</h2>
+		<h2 class="title">Featured Walks</h2>
 		<?php
 			foreach ($featured as $walk) {
 				echo $this->element('tile', array('walk' => $walk));
 			}
 		?>
-		<h2>Highest Rated Walks</h2>
+		<h2 class="title">Highest Rated Walks</h2>
 		<?php
 			foreach ($featured as $walk) {
 				echo $this->element('tile', array('walk' => $walk));
