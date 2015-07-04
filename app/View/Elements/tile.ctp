@@ -1,6 +1,9 @@
 <article class="tile">
+
 	<header class="tile-header">
-		
+		<svg class="tile-icon" viewBox="0 0 44 44">
+			<use xlink:href="/assets/icons/grades.svg#icon-grade-<?php echo $walk['Walk']['grade'] ?>"></use>
+		</svg>
 	</header>
 	<div class="tile-content">
 		<h3 class="tile-title"><?php echo $walk['Walk']['name']; ?></h3>
