@@ -1,16 +1,12 @@
 <header class="header">
 	<div class="container">
 		<button class="header-button">
-			<svg class="icon icon-white" viewBox="0 0 24 24">
-				<use xlink:href="/assets/icons/defs.svg#icon-arrow-back"></use>
-			</svg>
+			<?php echo $this->element('icon', array('name' => 'arrow-back')); ?>
 			<span class="hidden-xsmall">Back to results</span>
 		</button>
 		<div class="header-controls button-group right">
 			<a class="button header-button" href="#">
-				<svg class="icon icon-white" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-person"></use>
-				</svg>
+				<?php echo $this->element('icon', array('name' => 'person')); ?>
 				<span class="hidden-xsmall">Profile</span>
 			</a>
 		</div>
@@ -23,26 +19,16 @@
 			<h1 class="page-header-title">Walk Name</h1>
 			<h2 class="page-header-subtitle">National Park</h2>
 			<div class="rating">
-				<svg class="icon icon-white" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-				</svg>
-				<svg class="icon icon-white" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-				</svg>
-				<svg class="icon icon-white" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-				</svg>
-				<svg class="icon icon-white" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-				</svg>
-				<svg class="icon icon-white" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-star-half"></use>
-				</svg>
+				<?php
+					echo $this->element('icon', array('name' => 'star'));
+					echo $this->element('icon', array('name' => 'star'));
+					echo $this->element('icon', array('name' => 'star'));
+					echo $this->element('icon', array('name' => 'star'));
+					echo $this->element('icon', array('name' => 'star-half'));
+				?>
 			</div>
 			<button class="button button-secondary">
-				<svg class="icon icon-white" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-				</svg>
+				<?php echo $this->element('icon', array('name' => 'star')); ?>
 				<span class="hidden-xsmall">Favourite</span>
 			</button>
 		</div>
@@ -82,9 +68,7 @@
 		<article class="post">
 
 			<figure class="post-image">
-				<svg class="icon" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-flower"></use>
-				</svg>
+				<?php echo $this->element('icon', array('name' => 'flower')); ?>
 			</figure>
 			
 			<div class="post-content">
@@ -92,21 +76,13 @@
 					<h3 class="post-title">John Doe</h3>
 				</header>
 				<div class="rating">
-					<svg class="icon" viewBox="0 0 24 24">
-						<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-					</svg>
-					<svg class="icon" viewBox="0 0 24 24">
-						<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-					</svg>
-					<svg class="icon" viewBox="0 0 24 24">
-						<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-					</svg>
-					<svg class="icon" viewBox="0 0 24 24">
-						<use xlink:href="/assets/icons/defs.svg#icon-star"></use>
-					</svg>
-					<svg class="icon" viewBox="0 0 24 24">
-						<use xlink:href="/assets/icons/defs.svg#icon-star-half"></use>
-					</svg>
+					<?php
+						echo $this->element('icon', array('name' => 'star'));
+						echo $this->element('icon', array('name' => 'star'));
+						echo $this->element('icon', array('name' => 'star'));
+						echo $this->element('icon', array('name' => 'star'));
+						echo $this->element('icon', array('name' => 'star-half'));
+					?>
 				</div>
 				<footer class="post-footer">
 					
@@ -118,9 +94,7 @@
 		<article class="post">
 
 			<figure class="post-image">
-				<svg class="icon" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-flower"></use>
-				</svg>
+				<?php echo $this->element('icon', array('name' => 'flower')); ?>
 			</figure>
 			
 			<div class="post-content">
@@ -139,9 +113,7 @@
 		<article class="post">
 
 			<figure class="post-image">
-				<svg class="icon" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-flower"></use>
-				</svg>
+				<?php echo $this->element('icon', array('name' => 'flower')); ?>
 			</figure>
 			
 			<div class="post-content">
@@ -161,9 +133,7 @@
 		<article class="post">
 
 			<figure class="post-image">
-				<svg class="icon" viewBox="0 0 24 24">
-					<use xlink:href="/assets/icons/defs.svg#icon-flower"></use>
-				</svg>
+				<?php echo $this->element('icon', array('name' => 'flower')); ?>
 			</figure>
 			
 			<div class="post-content">
