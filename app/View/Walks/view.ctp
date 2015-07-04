@@ -104,21 +104,21 @@
 
 			echo $this->Form->input(
 				'first_name', array(
-					'placeholder' => 'William',
+					'placeholder' => 'Enter your first name',
 					'type' => 'text',
 				)
 			);
 		
 			echo $this->Form->input(
 				'last_name', array(
-					'placeholder' => 'Shakespeare',
+					'placeholder' => 'Enter your last name',
 					'type' => 'text',
 				)
 			);
 			
 			echo $this->Form->input(
 				'email', array(
-					'placeholder' => 'w.shakespeare@email.com',
+					'placeholder' => 'Enter your email address',
 					'type' => 'text',
 				)
 			);
@@ -126,7 +126,7 @@
 			echo $this->Form->input(
 				'comment', array(	
 					'type' => 'textarea',
-					'placeholder' => 'Tell us your story',
+					'placeholder' => 'Leave a review for ' . $name,
 					'rows' => '5',
 				)
 			);
