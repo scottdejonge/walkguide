@@ -27,15 +27,7 @@
 			<h1 class="page-header-title"><?php echo $name; ?></h1>
 			<h2 class="page-header-subtitle"><?php echo $owner; ?></h2>
 			<p><?php echo $category . '. ' . $type . '. ' . $region . '. '.  $group ?></p>
-			<div class="rating">
-				<?php
-					echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white'));
-					echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white'));
-					echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white'));
-					echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white'));
-					echo $this->element('icon', array('name' => 'star-half', 'class' => 'icon-white'));
-				?>
-			</div>
+			<?php echo $this->element('rating-form'); ?>
 		</div>
 	</div>
 </section>

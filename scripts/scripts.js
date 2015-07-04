@@ -10,6 +10,7 @@ var $ = require('jquery');
  */
 
 var Map = require('./map');
+var Ratings = require('./ratings');
 //var AjaxForms = require('./ajaxforms');
 
 
@@ -18,11 +19,13 @@ var Map = require('./map');
  */
 
 Map.initialise();
+Ratings.initialise();
 initialiseAjaxForms();
+initialiseRatingForm();
 
 
 /*
- * Forms
+ * Ajax Forms
  */
 
 //Initialise Ajax Forms
@@ -46,6 +49,40 @@ function initialiseAjaxForms() {
 					.replaceWith($el);
 				$el.trigger('ajax.replace');
 			});
+		});
+
+		event.preventDefault();
+	});
+}
+
+
+/*
+ * Rating Form
+ */
+
+//Initialise Ajax Forms
+function initialiseRatingForm() {
+	
+	// $('.rating input').click(function () {
+	// 	$(".rating span").removeClass('checked');
+	// 	$(this).parent().addClass('checked');
+	// });
+
+	// $('input:radio').change(function() {
+	// 	var userRating = this.value;
+		
+	// }); 
+
+	$('label').on('click', 'form[data-rating-form]', function(event) {
+		var userRating = this.value;
+		var $form = $(event.currentTarget);
+		var formAction = $form.prop('action');
+
+		console.log(userRating);
+
+		// post ajax form and update content areas
+		$.post(formAction, $form.serialize(), function(response, status, xhr) {
+			
 		});
 
 		event.preventDefault();

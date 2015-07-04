@@ -3,6 +3,43 @@
  */
 
 // Rating
-.rating {
+.rating-form {
 	margin: 10px 0px;
+
+	span {
+		position: relative;
+		unicode-bidi: bidi-override;
+		direction: rtl;
+
+		input {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			opacity: 0;
+		}
+
+		label {
+			display: inline-block;
+			.square(24px);
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.icon {
+			fill: darken(@primary, 15%);
+		}
+
+		&:hover,
+		&:focus,
+		&.checked {
+
+			label,
+			~ span label {
+				
+				.icon {
+					fill: @white;
+				}
+			}
+		}
+	}
 }
