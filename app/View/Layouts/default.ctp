@@ -45,12 +45,16 @@
 
 			// Scripts
 			echo $this->Html->script('/lib/svg4everybody.min.js');
+
+			// Google Maps API 
+			if (isset($googleMaps)) {
+				$this->Html->script('https://maps.google.com/maps/api/js?sensor=true', false);
+			}
 		?>
 	</head>
 	<body>
 		<?php
 			echo $this->fetch('content');
-			//echo $this->element('navigation');
 		?>
 	</body>
 	

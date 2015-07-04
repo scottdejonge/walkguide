@@ -1,3 +1,9 @@
+<?php
+
+	// Page settings
+	$this->set('title_for_layout', 'Walks');
+
+?>
 <section class="page-header">
 	<div class="container">
 		<div class="page-header-content">

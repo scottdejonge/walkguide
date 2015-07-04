@@ -1,3 +1,9 @@
+<?php
+
+	// Page settings
+	$this->set('title_for_layout', 'Walk Guide');
+
+?>
 <section class="hero">
 	<video class="hero-video" muted="muted" preload="auto" autoplay="autoplay" loop="loop" poster="/assets/video/poster.jpg">
 		<source src="/assets/video/hero.mp4" type="video/mp4">

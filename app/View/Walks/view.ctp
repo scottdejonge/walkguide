@@ -8,6 +8,12 @@
 	$type = (!empty($walk['Walk']['type'])) ? $walk['Walk']['type'] : '';
 	$group = (!empty($walk['Walk']['group'])) ? $walk['Walk']['group'] : '';
 
+	// Page settings
+	$this->set('title_for_layout', $name);
+
+	//Google Maps API
+	$this->set('googleMaps', true);
+
 ?>
 
 <header class="header">
