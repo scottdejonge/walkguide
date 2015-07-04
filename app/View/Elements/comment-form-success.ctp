@@ -1,5 +1,10 @@
-<div data-ajax-form-target="comment-form" class="text-center">
-	<p>Your review has been posted!</p>
-</div>
+<section class="comments" data-ajax-form-target="comment-form">
+	<div class="container">
 
-<?php echo $this->element('comments', array('comments' => $comments)); ?>
+		<h2 class="title">Comments</h2>
+		<?php
+			echo $this->element('comments', array('comments' => $comments));
+		?>
+		<p class="text-center">Your review has been posted!</p>
+	</div>
+</section>

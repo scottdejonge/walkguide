@@ -1,8 +1,14 @@
-<section data-ajax-form-target="comments">
+<section>
 		
 	<?php if (!empty($comments)) : ?>
 
 		<?php foreach ($comments as $comment) : ?>
+
+			<?php
+				if (isset($comment['Comment'])) {
+					$comment = $comment['Comment'];
+				}
+			?>
 
 			<article class="comment">
 

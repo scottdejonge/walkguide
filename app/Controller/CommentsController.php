@@ -11,6 +11,12 @@ class CommentsController extends AppController {
 			$this->Comment->create();
 
 			if ($this->Comment->saveAll($this->request->data)) {
+				$comments = $this->Comment->find('all', array(
+					'conditions' => array(
+						'Comment.walk_id' => $this->request->data['Comment']['walk_id'],
+					),
+				));
+				$this->set(compact('comments'));
 				return $this->render('/Elements/comment-form-success', false);
 			}
 

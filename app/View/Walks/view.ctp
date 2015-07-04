@@ -66,13 +66,13 @@
 	</div>
 </section> -->
 
-<section class="comments">
+<section class="comments" data-ajax-form-target="comment-form">
 	<div class="container">
 
-		<h2 class="title">Review <?php echo $name ?></h2>
+		<h2 class="title">Comments</h2>
 		<?php
-			echo $this->element('comment-form', array('walk_id' => $walk['Walk']['id']));
 			echo $this->element('comments', array('comments' => $walk['Comment']));
+			echo $this->element('comment-form', array('walk_id' => $walk['Walk']['id']));
 		?>
 	</div>
 </section>
