@@ -2,8 +2,8 @@
 	
 	// View Variables
 	$name = (!empty($walk['Walk']['name'])) ? $walk['Walk']['name'] : '';
-	$owner = $walk['Walk']['owner'];
-
+	$owner = (!empty($walk['Walk']['owner'])) ? $walk['Walk']['owner'] : '';
+	$region = (!empty($walk['Walk']['region'])) ? $walk['Walk']['region'] : '';
 	$category = (!empty($walk['Walk']['category'])) ? $walk['Walk']['category'] : '';
 	$type = (!empty($walk['Walk']['type'])) ? $walk['Walk']['type'] : '';
 	$group = (!empty($walk['Walk']['group'])) ? $walk['Walk']['group'] : '';
@@ -41,7 +41,7 @@
 			<?php endif; ?>
 			<h1 class="page-header-title"><?php echo $name; ?></h1>
 			<h2 class="page-header-subtitle"><?php echo $owner; ?></h2>
-			<p><?php echo $category . '. ' . $type . '. ' . $group ?></p>
+			<p><?php echo $category . '. ' . $type . '. ' . $region . '. '.  $group ?></p>
 			<div class="rating">
 				<?php
 					echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white'));
@@ -56,7 +56,7 @@
 </section>
 
 <section class="map">
-	<div class="map-canvas" data-map></div>
+	<div class="map-canvas" data-map data-map-polyline="<?php echo $walk['Walk']['geometry']; ?>"></div>
 </section>
 
 <!-- <section class="tabs">
