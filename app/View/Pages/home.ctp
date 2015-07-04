@@ -20,11 +20,11 @@
 			<h2 class="page-header-subtitle">National Park</h2>
 			<div class="rating">
 				<?php
-					echo $this->element('icon', array('name' => 'star'));
-					echo $this->element('icon', array('name' => 'star'));
-					echo $this->element('icon', array('name' => 'star'));
-					echo $this->element('icon', array('name' => 'star'));
-					echo $this->element('icon', array('name' => 'star-half'));
+					echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white'));
+					echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white'));
+					echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white'));
+					echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white'));
+					echo $this->element('icon', array('name' => 'star-half', 'class' => 'icon-white'));
 				?>
 			</div>
 			<button class="button button-secondary">
