@@ -13,28 +13,52 @@
 	margin-bottom: 35px;
 	background: @white;
 
+	@media @small-up {
+		display: table;
+		width: 100%;
+	}
 }
+
+.tile-header,
+.tile-content,
+.tile-footer {
+	
+	@media @small-up {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
 
 .tile-title,
 .tile-subtitle {
 	margin: 0;
-	color: @white;
 }
 
 .tile-header {
 	padding: 20px;
 	height: 100px;
 	background: @primary;
+
+	@media @small-up {
+		width: 100px;
+		height: 100px;
+	}
 }
 
 .tile-content {
-	padding: 20px 20px 0px 20px;
+	padding: 20px;
 
-	@media @medium-up {
-		height: 250px;
+	@media @small-up {
+		padding: 20px 35px;
 	}
 }
 
 .tile-footer {
 	padding: 20px;
+
+	@media @small-up {
+		width: 150px;
+		text-align: right;
+	}
 }
