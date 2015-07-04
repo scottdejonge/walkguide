@@ -16,27 +16,6 @@
 
 ?>
 
-<header class="header">
-	<div class="container">
-		<?php 
-			echo $this->Html->link(
-				$this->element('icon', array('name' => 'arrow-back')) . '<span class="hidden-xsmall">Back to Walks</span>',
-				'/walks/',
-				array(
-					'class' => 'button header-button',
-					'escape' => false,
-				)
-			);
-		?>
-		<div class="header-controls button-group right">
-			<a class="button header-button" href="#">
-				<?php echo $this->element('icon', array('name' => 'person')); ?>
-				<span class="hidden-xsmall">Profile</span>
-			</a>
-		</div>
-	</div>
-</header>
-
 <section class="page-header">
 	<div class="container">
 		<div class="page-header-content">
