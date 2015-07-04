@@ -10,7 +10,13 @@
 
 	<div class="tile-content">
 		<h3 class="tile-title">
-			<?php echo $walk['Walk']['name']; ?><br>
+			<?php 
+				echo $this->Html->link(
+					$walk['Walk']['name'],
+					'/walks/' . $walk['Walk']['id']
+				);
+			?>
+			<br>
 			<small><?php echo $walk['Walk']['owner']; ?> <?php echo $walk['Walk']['region']; ?></small>
 		</h3>
 	</div>
