@@ -81,6 +81,54 @@ class WalksController extends AppController {
 	}
 
 	// Updated Null
+	public function points() {
+		$success = true;
+		$records = 0;
+		$rows = 0;
+
+		//echo 'Disabled'; exit;
+
+		$walks = $this->Walk->find('all', array(
+			'contain' => array(
+				'id',
+				'geometry',
+			),
+		));
+
+		foreach ($walks as $walk) {
+			$geometry = $walk['Walk']['geometry'];
+
+			if ((stripos($geometry, '<LineString><coordinates>') !== false)) {
+				preg_match('/([^,]+)/', $geometry, $matches);
+				pr($matches);
+				$start_lng = $matches[0];
+				echo $start_lng;
+				preg_match('/([^,0]+)/', $geometry, $matches);
+				pr($matches);
+				$start_lat = $matches[0];
+				echo $start_lat;
+			}
+
+			echo '<hr>';
+
+			pr(h($walk['Walk']['geometry'])); die;
+
+			
+							
+			// if ($this->Walk->save($walk)) {
+			// 	$records++;
+			// } else {
+			// 	$success = false;
+			// }
+		}
+
+		echo ($success ? 'Success. ' : 'Failed. ');
+		echo $records . ' records created.';
+		
+		exit;
+	}
+
+	// Updated Null
 	public function null() {
 		$success = true;
 		$records = 0;

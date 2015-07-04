@@ -7,9 +7,14 @@
 
 	// Walks
 	Router::connect('/walks/', array('controller' => 'walks', 'action' => 'index'));
+
+	// Walk Scripts
+	Router::connect('/walks/points', array('controller' => 'walks', 'action' => 'points'));
 	Router::connect('/walks/null', array('controller' => 'walks', 'action' => 'null'));
 	Router::connect('/walks/grades', array('controller' => 'walks', 'action' => 'grades'));
 	Router::connect('/walks/import', array('controller' => 'walks', 'action' => 'import'));
+
+	// Walk Views
 	Router::connect('/walks/:id', array('controller' => 'walks', 'action' => 'view'));
 	Router::connect('/walks/:id/kml', array('controller' => 'walks', 'action' => 'download'));
 
