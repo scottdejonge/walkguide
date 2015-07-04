@@ -44,30 +44,32 @@ class WalksController extends AppController {
 		
 		    while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
 
-		        foreach($header as $i => $heading_i) { 
+		        foreach ($header as $i => $heading_i) { 
 					$row_new[$heading_i] = $row[$i];
 				}
 				
-                $data[] = $row_new;
-                $rows++;
-   		    }
-		    
-		    fclose($handle);
+				$data[] = $row_new;
+				$rows++;
+			}
+
+			fclose($handle);
 		}
 		
 		ini_set('auto_detect_line_endings', false);
 		
 		// Add document, category, map fields and save Publications
-		foreach($data as $walkData) {
+		foreach ($data as $walkData) {
 			$temp = array();
 			
-			foreach($fieldMap as $schema => $csv) {
+			foreach ($fieldMap as $schema => $csv) {
 				$temp[$schema] = $walkData[$csv];
 			}
 			
 			$walk = $this->Walk->create($temp);
+
+			//pr($walk); die;
 							
-			if ($this->Publication->save($publication)) {
+			if ($this->Walk->save($walk)) {
 				$records++;
 			} else {
 				$success = false;
