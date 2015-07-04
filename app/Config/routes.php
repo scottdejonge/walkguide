@@ -32,8 +32,9 @@
 
 	// Walks
 	Router::connect('/walks/', array('controller' => 'walks', 'action' => 'index'));
-	Router::connect('/walks/:id', array('controller' => 'walks', 'action' => 'view'));
+	Router::connect('/walks/grades', array('controller' => 'walks', 'action' => 'grades'));
 	Router::connect('/walks/import', array('controller' => 'walks', 'action' => 'import'));
+	Router::connect('/walks/:id', array('controller' => 'walks', 'action' => 'view'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

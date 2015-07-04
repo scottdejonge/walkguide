@@ -42,12 +42,62 @@ class WalksController extends AppController {
 
 		$this->set(compact('walk'));
 	}
+
+	// Groups to Grade
+	public function grades() {
+		$success = true;
+		$records = 0;
+		$rows = 0;
+
+		echo 'Disabled'; exit;
+
+		$walks = $this->Walk->find('all', array(
+			'contain' => array(
+				'id',
+				'group',
+				'grade',
+			),
+		));
+
+		foreach ($walks as $walk) {
+			$group = $walk['Walk']['group'];
+
+			if ((stripos($group, 'Track Class') !== false)) {
+				echo $group . '<br>';
+				preg_match('/\d+/', $group, $matches);
+				$grade = $matches[0];
+			} else {
+				$grade = null;
+				echo 'No Group' . '<br>';
+			}
+
+			echo $grade;
+			echo '<hr>';
+
+			$walk['Walk']['grade'] = $grade;
+
+			//pr($walk); die;
+							
+			if ($this->Walk->save($walk)) {
+				$records++;
+			} else {
+				$success = false;
+			}
+		}
+
+		echo ($success ? 'Success. ' : 'Failed. ');
+		echo $records . ' records created.';
+		
+		exit;
+	}
 	
 	// Imports Walk Data from CSV
 	public function import() {	
 		$success = true;
 		$records = 0;
 		$rows = 0;
+
+		echo 'Disabled'; exit;
 		
 		$fieldMap = array(
 			'name' => 'name',
