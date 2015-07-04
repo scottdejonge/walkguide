@@ -22,14 +22,26 @@ class WalksController extends AppController {
 		
 		$fieldMap = array(
 			'name' => 'name',
+			'category' => 'subcat',
 			'type' => 'assettype',
+			'group' => 'assetgroup',
+			'region' => 'gw',
+			'grade' => 'ped',
 			'owner' => 'owner',
+			'access' => 'access',
 			'status' => 'status',
+			'maintain' => 'maintain',
 			'warning' => 'warning',
+			'gisid' => 'gisid',
+			'source' => 'source',
+			'source_comment' => 'src_commen',
+			'vetting' => 'vetting',
 			'comments' => 'comments',
+			'wheelchair' => 'wheelchair',
 			'fireline' => 'fireline',
 			'material' => 'material',
-			'grade' => 'assetgroup',
+			'geometry' => 'geometry',
+			'geometry_vertex_count' => 'geometry_vertex_count',
 			'geometry' => 'geometry',
 		);
 		
@@ -44,8 +56,11 @@ class WalksController extends AppController {
 		
 		    while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
 
-		        foreach ($header as $i => $heading_i) { 
-					$row_new[$heading_i] = $row[$i];
+		        foreach ($header as $i => $heading_i) {
+
+		        	if (isset($row[$i])) {
+						$row_new[$heading_i] = $row[$i];
+					}
 				}
 				
 				$data[] = $row_new;
@@ -66,6 +81,9 @@ class WalksController extends AppController {
 			}
 			
 			$walk = $this->Walk->create($temp);
+
+			// Fix Name
+			$walk['Walk']['name'] = ucwords(strtolower($walk['Walk']['name']));
 
 			//pr($walk); die;
 							
