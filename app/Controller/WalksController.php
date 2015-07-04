@@ -6,12 +6,41 @@ App::uses('CakeTime', 'Utility');
 class WalksController extends AppController {
 		
 	public function index() {
-		$walks = $this->Walk->find('all');
+		$walks = $this->Walk->find('all', array(
+			'limit' => 500,
+			'contain' => array(
+				'name',
+				'owner',
+				'category',
+				'type',
+				'group',
+			),
+			'conditions' => array(
+				//'Walk.name',
+				'Walk.type' => 'Walking Track',
+			),
+		));
+
+		//pr($walks); die;
+
 		$this->set(compact('walks'));
 	}
 
 	public function view() {
+		$walk = $this->Walk->find('first', array(
+			'conditions' => array(
+				'Walk.id' => $this->request->params['id'],
+			),
+			'contain' => array(
 
+			),
+		));
+
+		if (!$walk) {
+			throw new NotFoundException();
+		}
+
+		$this->set(compact('walk'));
 	}
 	
 	// Imports Walk Data from CSV

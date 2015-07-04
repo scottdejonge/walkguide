@@ -32,7 +32,7 @@
 
 	// Walks
 	Router::connect('/walks/', array('controller' => 'walks', 'action' => 'index'));
-	//Router::connect('/walks/:id', array('controller' => 'walks', 'action' => 'view'));
+	Router::connect('/walks/:id', array('controller' => 'walks', 'action' => 'view'));
 	Router::connect('/walks/import', array('controller' => 'walks', 'action' => 'import'));
 
 /**
