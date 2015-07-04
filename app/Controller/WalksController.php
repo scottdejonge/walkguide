@@ -22,6 +22,7 @@ class WalksController extends AppController {
 		
 		$fieldMap = array(
 			'name' => 'name',
+			'type' => 'assettype',
 			'owner' => 'owner',
 			'status' => 'status',
 			'warning' => 'warning',
@@ -42,7 +43,7 @@ class WalksController extends AppController {
 			$header = fgetcsv($handle, 1000, ",");
 		
 		    while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
-		    	
+
 		        foreach($header as $i => $heading_i) { 
 					$row_new[$heading_i] = $row[$i];
 				}
