@@ -34,6 +34,11 @@
 <section class="page-header">
 	<div class="container">
 		<div class="page-header-content">
+			<?php if (!empty($walk['Walk']['grade'])) : ?>
+				<svg class="page-header-icon" viewBox="0 0 44 44">
+					<use xlink:href="/assets/icons/grades.svg#icon-grade-<?php echo $walk['Walk']['grade'] ?>"></use>
+				</svg>
+			<?php endif; ?>
 			<h1 class="page-header-title"><?php echo $name; ?></h1>
 			<h2 class="page-header-subtitle"><?php echo $owner; ?></h2>
 			<p><?php echo $category . '. ' . $type . '. ' . $group ?></p>
@@ -46,12 +51,7 @@
 					echo $this->element('icon', array('name' => 'star-half', 'class' => 'icon-white'));
 				?>
 			</div>
-			<button class="button button-secondary">
-				<?php echo $this->element('icon', array('name' => 'star', 'class' => 'icon-white')); ?>
-				<span class="hidden-xsmall">Favourite</span>
-			</button>
 		</div>
-		
 	</div>
 </section>
 
