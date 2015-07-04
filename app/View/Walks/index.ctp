@@ -37,7 +37,7 @@
 						<footer class="tile-footer">
 							<?php 
 								echo $this->Html->link(
-									'View Walk' . $this->element('icon', array('name' => 'angle-right')),
+									'View Walk' . $this->element('icon', array('name' => 'angle-right', 'class' => 'icon-white')),
 									'/walks/' . $walk['Walk']['id'],
 									array(
 										'class' => 'button button-primary button-action',
