@@ -1,7 +1,7 @@
 <?php
 	
 	// View Variables
-	$name = $walk['Walk']['name'];
+	$name = (!empty($walk['Walk']['name'])) ? $walk['Walk']['name'] : '';
 	$owner = $walk['Walk']['owner'];
 
 	$category = (!empty($walk['Walk']['category'])) ? $walk['Walk']['category'] : '';
