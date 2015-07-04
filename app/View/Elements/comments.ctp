@@ -11,7 +11,10 @@
 				</figure>
 				
 				<div class="comment-content">
-					<h3 class="comment-title"><?php echo h($comment['first_name']) . ' ' . h($comment['last_name']); ?></h3>
+					<h3 class="comment-title">
+						<?php echo h($comment['first_name']) . ' ' . h($comment['last_name']); ?>
+						<small><?php echo $this->Time->format('d M', $comment['created']); ?></small>
+					</h3>
 					<p><?php echo h($comment['comment']); ?></p>
 				</div>
 				
