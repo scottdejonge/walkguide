@@ -1,0 +1,2 @@
+<?php
+	echo 'cunt'; die;

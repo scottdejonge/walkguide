@@ -1,4 +1,6 @@
 <?php
+	
+	Router::parseExtensions('json', 'xml', 'kml', 'csv');
 
 	// Home
 	Router::connect('/', array('controller' => 'walks', 'action' => 'home'));
@@ -9,6 +11,7 @@
 	Router::connect('/walks/grades', array('controller' => 'walks', 'action' => 'grades'));
 	Router::connect('/walks/import', array('controller' => 'walks', 'action' => 'import'));
 	Router::connect('/walks/:id', array('controller' => 'walks', 'action' => 'view'));
+	Router::connect('/walks/:id/kml', array('controller' => 'walks', 'action' => 'download'));
 
 	// Pages
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
