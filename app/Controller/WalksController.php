@@ -1,7 +1,6 @@
 <?php
 
 App::uses('AppController', 'Controller');
-App::uses('CakeTime', 'Utility');
 
 class WalksController extends AppController {
 	
@@ -52,7 +51,7 @@ class WalksController extends AppController {
 				'Walk.id' => $this->request->params['id'],
 			),
 			'contain' => array(
-
+				'Comment',
 			),
 		));
 

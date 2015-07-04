@@ -2,26 +2,29 @@
  * Posts
  */
 
-// Posts
-.posts {
+// Comments
+.comments {
 	padding: 50px 0px;
 	background: @light;
+
+	.container {
+		max-width: 600px;
+	}
 }
 
-// Post
-.post {
+// Comment
+.comment {
 	position: relative;
 	margin: 50px auto;
 	padding-left: 100px;
-	max-width: 600px;
 
 	@media @xsmall {
 		padding-left: 50px;
 	}
 }
 
-// Post Image
-.post-image {
+// Comment Image
+.comment-image {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -39,13 +42,8 @@
 	}
 }
 
-// Post Header
-.post-header {
-	
-}
-
-// Post Content
-.post-content {
+// Comment Content
+.comment-content {
 	position: relative;
 	padding: 20px;
 	min-height: 100px;
@@ -79,11 +77,7 @@
 	}
 }
 
-// Post Title
-.post-title {
+// Comment Title
+.comment-title {
 	.medium-font();
-}
-
-.post-footer {
-	
 }
