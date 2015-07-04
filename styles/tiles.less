@@ -44,25 +44,17 @@
 	vertical-align: middle;
 }
 
-.tile-title,
-.tile-subtitle {
+.tile-title {
 	margin: 0;
 	.truncate();
-}
-
-.tile-title {
 	.font-size(1.4);
+
+	small {
+		font-size: 0.8em;
+	}
 
 	@media @small-up {
 		.font-size(1.8);
-	}
-}
-
-.tile-subtitle {
-	.font-size(1.2);
-
-	@media @small-up {
-		.font-size(1.4);
 	}
 }
 
