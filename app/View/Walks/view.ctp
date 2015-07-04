@@ -12,10 +12,16 @@
 
 <header class="header">
 	<div class="container">
-		<button class="header-button">
-			<?php echo $this->element('icon', array('name' => 'arrow-back')); ?>
-			<span class="hidden-xsmall">Back to results</span>
-		</button>
+		<?php 
+			echo $this->Html->link(
+				$this->element('icon', array('name' => 'arrow-back')) . '<span class="hidden-xsmall">Back to Walks</span>',
+				'/walks/',
+				array(
+					'class' => 'button header-button',
+					'escape' => false,
+				)
+			);
+		?>
 		<div class="header-controls button-group right">
 			<a class="button header-button" href="#">
 				<?php echo $this->element('icon', array('name' => 'person')); ?>
