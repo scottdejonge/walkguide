@@ -36,15 +36,16 @@ function initialise() {
  */
 
 function initialiseMap() {
-	var polyline = $map.data('map-polyline');
-	console.log(polyline);
+	var walkId = $map.data('walk-id');
+	console.log(walkId);
 
 	// Create Map
 	map = new google.maps.Map($map.get(0), mapOptions);
 
 	var polylineLayer = new google.maps.KmlLayer({
-		url: 'http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml'
+		url: '/walks/' + walkId + '/kml'
 	});
+	console.log(polylineLayer);
 	polylineLayer.setMap(map);
 }
 

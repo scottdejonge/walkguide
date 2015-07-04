@@ -41,7 +41,7 @@
 </section>
 
 <section class="map">
-	<div class="map-canvas" data-map data-map-polyline="<?php echo $walk['Walk']['geometry']; ?>"></div>
+	<div class="map-canvas" data-map data-walk-id="<?php echo $walk['Walk']['id']; ?>"></div>
 </section>
 
 <!-- <section class="tabs">
