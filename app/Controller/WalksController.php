@@ -26,7 +26,7 @@ class WalksController extends AppController {
 
 	public function index() {
 		$walks = $this->Walk->find('all', array(
-			'limit' => 500,
+			//'limit' => 500,
 			'contain' => array(
 				'name',
 				'owner',
@@ -35,7 +35,7 @@ class WalksController extends AppController {
 				'group',
 			),
 			'conditions' => array(
-				//'Walk.name',
+				'not' => array('Walk.name' => null),
 				'Walk.type' => 'Walking Track',
 			),
 		));
@@ -60,6 +60,48 @@ class WalksController extends AppController {
 		}
 
 		$this->set(compact('walk'));
+	}
+
+	// Updated Null
+	public function null() {
+		$success = true;
+		$records = 0;
+		$rows = 0;
+
+		echo 'Disabled'; exit;
+
+		$walks = $this->Walk->find('all', array(
+			'contain' => array(
+				'id',
+				'name',
+			),
+		));
+
+		foreach ($walks as $walk) {
+			$name = $walk['Walk']['name'];
+
+			if ($name == '') {
+				$name = null;
+			}
+
+			echo $name;
+			echo '<hr>';
+
+			$walk['Walk']['name'] = $name;
+
+			//pr($walk); die;
+							
+			if ($this->Walk->save($walk)) {
+				$records++;
+			} else {
+				$success = false;
+			}
+		}
+
+		echo ($success ? 'Success. ' : 'Failed. ');
+		echo $records . ' records created.';
+		
+		exit;
 	}
 
 	// Groups to Grade
