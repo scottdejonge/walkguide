@@ -59,7 +59,7 @@
 	<div class="map-canvas" data-map></div>
 </section>
 
-<section class="tabs">
+<!-- <section class="tabs">
 	<div class="container">
 		<div class="button-group-block">
 			<div class="button-group">
@@ -78,6 +78,64 @@
 				<button>Videos</button>
 			</div>
 		</div>
+	</div>
+</section> -->
+
+<section class="form-wrapper">
+	<div class="container">
+		<h2 class="title">Review <?php echo $name ?></h2>
+		<?php 
+			echo $this->Form->create('Comment', array(
+				'url' => '/comments/add',
+				'id' => 'comment-form',
+				'data-ajax-form' => '',
+				'data-ajax-form-target' => 'comment-form',
+				'inputDefaults' => array(
+					'div' => false,
+					'error' => array(
+						'class' => 'error',
+						'attributes' => array(
+							'wrap' => 'p',
+							'class' => 'form-message error',
+						)
+					)
+				)
+			));
+
+			echo $this->Form->input(
+				'first_name', array(
+					'placeholder' => 'William',
+					'type' => 'text',
+				)
+			);
+		
+			echo $this->Form->input(
+				'last_name', array(
+					'placeholder' => 'Shakespeare',
+					'type' => 'text',
+				)
+			);
+			
+			echo $this->Form->input(
+				'email', array(
+					'placeholder' => 'w.shakespeare@email.com',
+					'type' => 'text',
+				)
+			);
+
+			echo $this->Form->input(
+				'comment', array(	
+					'type' => 'textarea',
+					'placeholder' => 'Tell us your story',
+					'rows' => '5',
+				)
+			);
+			
+			echo $this->Form->button('Submit', array('type' => 'submit', 'class' => 'button button-block button-primary')); 
+			
+			echo $this->Form->end();
+		?>
+
 	</div>
 </section>
 
