@@ -1,0 +1,41 @@
+/*
+ * Navigation
+ */
+
+// Navigation
+.navigation {
+	
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+
+			a {
+				display: block;
+				padding: 10px 15px;
+				.medium-font();
+				.font-size(@paragraph-font-size);
+				line-height: 30px;
+				color: darken(@primary, 12.5%);
+
+				.icon {
+					fill: darken(@primary, 12.5%);
+					vertical-align: middle;
+				}
+
+				&:hover,
+				&:focus {
+					color: @white;
+
+					.icon {
+						fill: @white;
+					}
+				}
+			}	
+		}
+	}
+}

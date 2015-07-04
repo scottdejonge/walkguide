@@ -1,0 +1,30 @@
+/*
+ * Footer
+ */
+
+// Footer
+.footer {
+	padding: 30px 0px;
+	text-align: center;
+	background: @dark;
+
+	p,
+	a {
+		.font-size(@font-size-small);
+		color: @white;
+	}
+
+	p {
+		margin: 0px 0px 10px 0px;
+	}
+
+	a {
+		.medium-font();
+		color: @white;
+
+		&:hover,
+		&:focus {
+			color: @primary;
+		}
+	}
+}
