@@ -40,7 +40,6 @@
 <section class="tiles">
 	<div class="container">
 		<?php
-			$paginator = $this->Paginator;
 
 			if ($walks) {
 
@@ -51,22 +50,22 @@
 				// Pagination
 				echo '<div class="pagination">';
 
-					echo $paginator->first('First');
+					echo $this->Paginator->first('First');
 
-					if( $paginator->hasPrev()) {
-						echo $paginator->prev('Prev');
+					if( $this->Paginator->hasPrev()) {
+						echo $this->Paginator->prev('Prev');
 					}
 
-					echo $paginator->numbers(array(
+					echo $this->Paginator->numbers(array(
 						'modulus' => 2,
 						'separator' => '',
 						'currentClass' => 'active',
 					));
 
-					if ($paginator->hasNext()) {
-						echo $paginator->next('Next');
+					if ($this->Paginator->hasNext()) {
+						echo $this->Paginator->next('Next');
 					}
-					echo $paginator->last('Last');
+					echo $this->Paginator->last('Last');
 
 				echo '</div>';
 
