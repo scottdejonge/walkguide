@@ -19,6 +19,7 @@
 	Router::connect('/walks/:id/kml', array('controller' => 'walks', 'action' => 'download'));
 
 	// Pages
+	Router::connect('/about/', array('controller' => 'pages', 'action' => 'about'));
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 /**
