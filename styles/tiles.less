@@ -10,44 +10,76 @@
 
 // Tile
 .tile {
-	margin-bottom: 35px;
+	display: table;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 40px;
 	background: @white;
 
 	@media @small-up {
-		display: table;
-		width: 100%;
+		margin-bottom: 35px;
+		height: 100px;
+	}
+
+	@media @xsmall {
+
+		.button-action {
+			border-radius: 0;
+		}
+	}
+}
+
+.tile-icon {
+	.square(30px);
+
+	@media @small-up {
+		.square(44px);
 	}
 }
 
 .tile-header,
 .tile-content,
 .tile-footer {
-	
-	@media @small-up {
-		display: table-cell;
-		vertical-align: middle;
-	}
+	display: table-cell;
+	vertical-align: middle;
 }
-
 
 .tile-title,
 .tile-subtitle {
 	margin: 0;
+	.truncate();
+}
+
+.tile-title {
+	.font-size(1.4);
+
+	@media @small-up {
+		.font-size(1.8);
+	}
+}
+
+.tile-subtitle {
+	.font-size(1.2);
+
+	@media @small-up {
+		.font-size(1.4);
+	}
 }
 
 .tile-header {
-	padding: 20px;
-	height: 100px;
+	padding: 5px;
+	.square(40px);
 	background: @primary;
 
 	@media @small-up {
-		width: 100px;
-		height: 100px;
+		padding: 28px;
+		.square(100px);
 	}
 }
 
 .tile-content {
-	padding: 20px;
+	padding: 15px;
+	width: 100%;
 
 	@media @small-up {
 		padding: 20px 35px;
@@ -55,10 +87,12 @@
 }
 
 .tile-footer {
-	padding: 20px;
+	padding: 0;
+	width: 40px;
+	text-align: right;
 
 	@media @small-up {
+		padding: 20px;
 		width: 150px;
-		text-align: right;
 	}
 }
