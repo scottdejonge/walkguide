@@ -62,21 +62,26 @@ class WalksController extends AppController {
 		$this->set(compact('walk'));
 	}
 
-	public function download() {
-		$this->response->type("application/vnd.google-earth.kml+xml");
-		$this->render('kml/download.ctp', 'xml');
-
+	public function kml() {
 		$walk = $this->Walk->find('first', array(
 			'conditions' => array(
 				'Walk.id' => $this->request->params['id'],
 			),
+			'contain' => array(
+				'Walk.geometry',
+			),
 		));
+
+		//pr(h($walk)); die;
 
 		if (!$walk) {
 			throw new NotFoundException();
 		}
 
 		$this->set(compact('walk'));
+		
+		$this->response->type("application/vnd.google-earth.kml+xml");
+		$this->render('kml/kml', 'xml');
 	}
 
 	// Updated Null

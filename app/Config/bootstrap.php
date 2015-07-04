@@ -28,6 +28,13 @@ Cache::config('default', array('engine' => 'File'));
 config('site');
 
 /**
+ * Extra content types
+ */
+Configure::write('Config.extraContentTypes', array(
+	'kml' => 'application/vnd.google-earth.kml+xml'
+));
+
+/**
  * The settings below can be used to set additional paths to models, views and controllers.
  *
  * App::build(array(

@@ -16,7 +16,7 @@
 
 	// Walk Views
 	Router::connect('/walks/:id', array('controller' => 'walks', 'action' => 'view'));
-	Router::connect('/walks/:id/kml', array('controller' => 'walks', 'action' => 'download'));
+	Router::connect('/walks/:id/kml', array('controller' => 'walks', 'action' => 'kml'));
 
 	// Pages
 	Router::connect('/about/', array('controller' => 'pages', 'action' => 'about'));
