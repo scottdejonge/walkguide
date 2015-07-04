@@ -4,7 +4,26 @@ App::uses('AppController', 'Controller');
 App::uses('CakeTime', 'Utility');
 
 class WalksController extends AppController {
-		
+	
+	public function home() {
+
+		$featured = $this->Walk->find('all', array(
+			'limit' => 4,
+			'contain' => array(
+				'name',
+				'owner',
+				'category',
+				'type',
+				'group',
+			),
+			'conditions' => array(
+				'Walk.featured' => 1,
+			),
+		));
+
+		$this->set(compact('featured'));
+	}
+
 	public function index() {
 		$walks = $this->Walk->find('all', array(
 			'limit' => 500,
