@@ -50,10 +50,16 @@
 				// Pagination
 				echo '<div class="pagination">';
 
-					echo $this->Paginator->first('First');
+					// echo $this->Paginator->first(
+					// 	$this->element('icon', array('name' => 'arrow-back')),
+					// 	array('escape' => false)
+					// );
 
 					if( $this->Paginator->hasPrev()) {
-						echo $this->Paginator->prev('Prev');
+						echo $this->Paginator->prev(
+							$this->element('icon', array('name' => 'angle-left')),
+							array('escape' => false)
+						);
 					}
 
 					echo $this->Paginator->numbers(array(
@@ -63,9 +69,15 @@
 					));
 
 					if ($this->Paginator->hasNext()) {
-						echo $this->Paginator->next('Next');
+						echo $this->Paginator->next(
+							$this->element('icon', array('name' => 'angle-right')),
+							array('escape' => false)
+						);
 					}
-					echo $this->Paginator->last('Last');
+					// echo $this->Paginator->last(
+					// 	$this->element('icon', array('name' => 'arrow-forward')),
+					// 	array('escape' => false)
+					// );
 
 				echo '</div>';
 
