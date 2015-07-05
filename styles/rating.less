@@ -4,7 +4,7 @@
 
 // Rating
 .rating-form {
-	margin: 10px 0px;
+	margin-top: 10px;
 
 	span {
 		position: relative;
@@ -19,6 +19,7 @@
 		}
 
 		label {
+			margin: 0;
 			display: inline-block;
 			.square(24px);
 			text-align: center;
@@ -26,7 +27,7 @@
 		}
 
 		.icon {
-			fill: darken(@primary, 15%);
+			fill: @light-grey;
 		}
 
 		&:hover,
@@ -37,7 +38,7 @@
 			~ span label {
 				
 				.icon {
-					fill: @white;
+					fill: @grey;
 				}
 			}
 		}

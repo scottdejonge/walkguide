@@ -1,3 +1,17 @@
+<?php
+	$ratings = array();
+
+	foreach ($walk['Rating'] as $rating) {
+		array_push($ratings, $rating['rating']);
+	}
+
+	if (!empty($walk['Rating'])) {
+		$average = round(array_sum($ratings) / count($ratings));
+	} else {
+		$average = 0;
+	}
+
+?>
 <article class="tile">
 	
 	<?php if (!empty($walk['Walk']['grade'])) : ?>
@@ -19,6 +33,7 @@
 			<br>
 			<small><?php echo $walk['Walk']['owner']; ?> <?php echo $walk['Walk']['region']; ?></small>
 		</h3>
+		<?php echo $this->element('rating-form', array('walk' => $walk, 'average' => $average)); ?>
 	</div>
 	<footer class="tile-footer">
 		<?php 

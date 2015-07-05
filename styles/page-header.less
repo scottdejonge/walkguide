@@ -5,6 +5,30 @@
 // Page Header
 .page-header {
 	background: @primary;
+
+	.rating-form {
+		margin-top: 30px;
+
+		span {
+
+			.icon {
+				fill: darken(@primary, 15%);
+			}
+
+			&:hover,
+			&:focus,
+			&.checked {
+
+				label,
+				~ span label {
+					
+					.icon {
+						fill: @white;
+					}
+				}
+			}
+		}
+	}
 }
 
 .page-header-content {
