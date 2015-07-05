@@ -43,7 +43,7 @@ function initialiseMap() {
 	map = new google.maps.Map($map.get(0), mapOptions);
 
 	var polylineLayer = new google.maps.KmlLayer({
-		url: 'https://raw.githubusercontent.com/scottdejonge/walkguide/master/app/webroot/kml'
+		url: 'http://walkguide.staging.bigfish.tv/walks/' + walkId + '/kml'
 	});
 	console.log(polylineLayer);
 	polylineLayer.setMap(map);
