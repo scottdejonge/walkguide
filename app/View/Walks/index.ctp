@@ -7,12 +7,12 @@
 <section class="page-header">
 	<div class="container">
 		<div class="page-header-content">
-			<h1 class="page-header-title">Bushwalks</h1>
+			<h1 class="page-header-title">Walks</h1>
 		</div>
 	</div>
 </section>
 
-<section class="tabs">
+<!-- <section class="tabs">
 	<div class="container">
 		<div class="button-group-block">
 			<div class="button-group">
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <section class="tiles">
 	<div class="container">
