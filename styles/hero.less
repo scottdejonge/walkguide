@@ -10,6 +10,13 @@
 	height: 80vh;
 	background: @dark;
 	overflow: hidden;
+
+	@media @small-down {
+		background-image: url('/assets/video/hero.jpg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
 }
 
 .hero-video {
@@ -21,6 +28,10 @@
 	height: auto;
 	background-size: cover;
 	mix-blend-mode: multiply;
+
+	@media @small-down {
+		display: none;
+	}
 }
 
 .hero-inner {

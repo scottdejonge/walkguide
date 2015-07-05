@@ -5,7 +5,7 @@
 
 ?>
 <section class="hero">
-	<video class="hero-video" muted="muted" preload="auto" autoplay="autoplay" loop="loop" poster="/assets/video/poster.jpg">
+	<video class="hero-video" muted="muted" preload="auto" autoplay="autoplay" loop="loop" poster="/assets/video/hero.jpg">
 		<source src="/assets/video/hero.mp4" type="video/mp4">
 	</video>
 	<div class="hero-inner">
