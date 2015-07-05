@@ -52,14 +52,23 @@ class WalksController extends AppController {
 			),
 			'contain' => array(
 				'Comment',
+				'Rating',
 			),
 		));
+
+		$ratings = array();
+
+		foreach ($walk['Rating'] as $rating) {
+			array_push($ratings, $rating['rating']);
+		}
+
+		$average = round(array_sum($ratings) / count($ratings));
 
 		if (!$walk) {
 			throw new NotFoundException();
 		}
 
-		$this->set(compact('walk'));
+		$this->set(compact('walk', 'average'));
 	}
 
 	public function kml() {

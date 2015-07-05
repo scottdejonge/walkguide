@@ -27,7 +27,7 @@
 			<h1 class="page-header-title"><?php echo $name; ?></h1>
 			<h2 class="page-header-subtitle"><?php echo $owner; ?></h2>
 			<p><?php echo $category . '. ' . $type . '. ' . $region . '. '.  $group ?></p>
-			<?php echo $this->element('rating-form'); ?>
+			<?php echo $this->element('rating-form', array('walk' => $walk, 'average' => $average)); ?>
 		</div>
 	</div>
 </section>
@@ -35,28 +35,6 @@
 <section class="map">
 	<div class="map-canvas" data-map data-walk-id="<?php echo $walk['Walk']['id']; ?>"></div>
 </section>
-
-<!-- <section class="tabs">
-	<div class="container">
-		<div class="button-group-block">
-			<div class="button-group">
-				<button class="active">All</button>
-			</div>
-			<div class="button-group">
-				<button>Ratings</button>
-			</div>
-			<div class="button-group">
-				<button>Comments</button>
-			</div>
-			<div class="button-group">
-				<button>Photos</button>
-			</div>
-			<div class="button-group">
-				<button>Videos</button>
-			</div>
-		</div>
-	</div>
-</section> -->
 
 <section class="comments" data-ajax-form-target="comment-form">
 	<div class="container">

@@ -10,7 +10,7 @@ var $ = require('jquery');
  */
 
 var Map = require('./map');
-var Ratings = require('./ratings');
+//var Ratings = require('./ratings');
 //var AjaxForms = require('./ajaxforms');
 
 
@@ -19,7 +19,7 @@ var Ratings = require('./ratings');
  */
 
 Map.initialise();
-Ratings.initialise();
+//Ratings.initialise();
 initialiseAjaxForms();
 initialiseRatingForm();
 
@@ -60,31 +60,40 @@ function initialiseAjaxForms() {
  * Rating Form
  */
 
-//Initialise Ajax Forms
+//Initialise Ratings Form
 function initialiseRatingForm() {
 	
-	// $('.rating input').click(function () {
-	// 	$(".rating span").removeClass('checked');
-	// 	$(this).parent().addClass('checked');
-	// });
+	setRatingAverage();
 
-	// $('input:radio').change(function() {
-	// 	var userRating = this.value;
-		
-	// }); 
-
-	$('label').on('click', 'form[data-rating-form]', function(event) {
+	$('form[data-rating-form] input').click(function () {
 		var userRating = this.value;
 		var $form = $(event.currentTarget);
-		var formAction = $form.prop('action');
+		
+		$('form[data-rating-form] span').removeClass('checked');
 
+		$(this).parent().addClass('checked');
+		
 		console.log(userRating);
 
-		// post ajax form and update content areas
-		$.post(formAction, $form.serialize(), function(response, status, xhr) {
-			
-		});
+		$form.submit();
 
 		event.preventDefault();
 	});
+
+	$('body').on('submit', 'form[data-rating-form]', function(event) {
+		var $form = $(event.currentTarget);
+		var formAction = $form.prop('action');
+
+		$.post(formAction, $form.serialize(), function(response, status, xhr) {});
+
+		setRatingAverage();
+
+		event.preventDefault();
+	});
+}
+
+function setRatingAverage() {
+	var average = $('form[data-rating-form]').data('rating-form');
+	
+	$('form[data-rating-form] span:gt(' + (5 - (average + 1)) + ')').addClass('checked');
 }

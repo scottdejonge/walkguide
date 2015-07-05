@@ -25,7 +25,7 @@ var mapOptions =  {
  */
 
 function initialise() {
-	if (!window.google || !window.google.maps) {
+	if (!window.google || !window.google.maps || ($map.length == 0)) {
 		return;
 	}
 	google.maps.event.addDomListener(window, 'load', initialiseMap);
