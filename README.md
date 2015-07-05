@@ -68,8 +68,6 @@ Visit Walk Guide at: <http://walkguide.staging.bigfish.tv/>
 * Pin Media along walk path
 * “Walk Highlights”
 
-###Hazards
-
 
 ##Contributors
 
