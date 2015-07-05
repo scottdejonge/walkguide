@@ -37,7 +37,6 @@ function initialise() {
 
 function initialiseMap() {
 	var walkId = $map.data('walk-id');
-	console.log(walkId);
 
 	// Create Map
 	map = new google.maps.Map($map.get(0), mapOptions);
@@ -45,7 +44,6 @@ function initialiseMap() {
 	var polylineLayer = new google.maps.KmlLayer({
 		url: 'http://walkguide.staging.bigfish.tv/walks/' + walkId + '/kml'
 	});
-	console.log(polylineLayer);
 	polylineLayer.setMap(map);
 }
 
