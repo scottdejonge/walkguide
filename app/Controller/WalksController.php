@@ -62,7 +62,12 @@ class WalksController extends AppController {
 			array_push($ratings, $rating['rating']);
 		}
 
-		$average = round(array_sum($ratings) / count($ratings));
+		if (!empty($walk['Rating'])) {
+			$average = round(array_sum($ratings) / count($ratings));
+		} else {
+			$average = 0;
+		}
+		
 
 		if (!$walk) {
 			throw new NotFoundException();

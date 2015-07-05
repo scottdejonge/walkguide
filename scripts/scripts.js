@@ -63,8 +63,6 @@ function initialiseAjaxForms() {
 //Initialise Ratings Form
 function initialiseRatingForm() {
 	
-	setRatingAverage();
-
 	$('form[data-rating-form] input').click(function () {
 		var userRating = this.value;
 		var $form = $(event.currentTarget);
@@ -94,6 +92,6 @@ function initialiseRatingForm() {
 
 function setRatingAverage() {
 	var average = $('form[data-rating-form]').data('rating-form');
-	
+
 	$('form[data-rating-form] span:gt(' + (5 - (average + 1)) + ')').addClass('checked');
 }

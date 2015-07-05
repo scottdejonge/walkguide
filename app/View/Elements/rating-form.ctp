@@ -18,7 +18,7 @@
 ?>
 
 <?php for ($i = 5; $i > 0; $i--) : ?>
-	<span>
+	<span <?php echo ($i <= $average) ?'class="checked"' : ''; ?>>
 		<label for="rating-<?php echo $i ?>">
 			<input type="radio" name="data[Rating][rating]" id="rating-<?php echo $i ?>" value="<?php echo $i ?>">
 			<?php echo $this->element('icon', array('name' => 'star')); ?>
