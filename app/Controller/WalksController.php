@@ -20,7 +20,22 @@ class WalksController extends AppController {
 			),
 		));
 
-		$this->set(compact('featured'));
+		$rated = $this->Walk->find('all', array(
+			'limit' => 4,
+			'contain' => array(
+				'name',
+				'owner',
+				'category',
+				'type',
+				'group',
+				'Rating',
+			),
+			'conditions' => array(
+				'Walk.featured' => 1,
+			),
+		));
+
+		$this->set(compact('featured', 'rated'));
 	}
 
 	public function index() {
@@ -67,7 +82,6 @@ class WalksController extends AppController {
 		} else {
 			$average = 0;
 		}
-		
 
 		if (!$walk) {
 			throw new NotFoundException();
