@@ -35,6 +35,18 @@ class WalksController extends AppController {
 			),
 		));
 
+		$ratings = array();
+
+		foreach ($walk['Rating'] as $rating) {
+			array_push($ratings, $rating['rating']);
+		}
+
+		if (!empty($walk['Rating'])) {
+			$average = round(array_sum($ratings) / count($ratings));
+		} else {
+			$average = 0;
+		}
+
 		$this->set(compact('featured', 'rated'));
 	}
 
