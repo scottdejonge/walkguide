@@ -75,6 +75,8 @@ function initialiseRatingForm() {
 
 		$form.submit();
 
+		setRatingAverage();
+
 		event.preventDefault();
 	});
 
@@ -83,8 +85,6 @@ function initialiseRatingForm() {
 		var formAction = $form.prop('action');
 
 		$.post(formAction, $form.serialize(), function(response, status, xhr) {});
-
-		setRatingAverage();
 
 		event.preventDefault();
 	});
