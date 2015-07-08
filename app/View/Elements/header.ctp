@@ -20,7 +20,7 @@
 						if ($loggedIn) {
 							echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'view'));
 						} else {
-							echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'));
+							echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'add'));
 						}
 					?>
 				</li>
