@@ -131,14 +131,14 @@ class WalksController extends AppController {
 			$geometry = $walk['Walk']['geometry'];
 
 			if ((stripos($geometry, '<LineString><coordinates>') !== false)) {
-				preg_match('/([^,]+)/', $geometry, $matches);
-				pr($matches);
+				preg_match('~<coordinates>([^,]+)~', $geometry, $matches);
+				pr(h($matches));
 				$start_lng = $matches[0];
-				echo $start_lng;
+				echo h($start_lng);
 				preg_match('/([^,0]+)/', $geometry, $matches);
-				pr($matches);
+				pr(h($matches));
 				$start_lat = $matches[0];
-				echo $start_lat;
+				echo h($start_lat);
 			}
 
 			echo '<hr>';
