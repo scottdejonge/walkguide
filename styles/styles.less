@@ -14,6 +14,7 @@
 @import './header.less';
 @import './navigation.less';
 @import './content.less';
+@import './login.less';
 @import './footer.less';
 
 // Components
@@ -26,7 +27,14 @@
 @import './hero.less';
 @import './pagination.less';
 
+body {
+	padding-top: @header-height;
+}
 
 .title {
 	margin: 0px 0px 50px 0px;
+}
+
+.container-small {
+	max-width: 600px;
 }

@@ -1,0 +1,23 @@
+/*
+ * Login
+ */
+
+// Login
+.login {
+	display: table;
+	width: 100%;
+	height: ~"calc(100vh - @{footer-height} - @{header-height})";
+	background: @light;
+}
+
+.login-inner {
+	display: table-cell;
+	padding-left: @gutter;
+	padding-right: @gutter;
+	vertical-align: middle;
+}
+
+.login-content {
+	.center-block();
+	max-width: 600px;
+}
