@@ -42,7 +42,12 @@
 		<h2 class="title">Comments</h2>
 		<?php
 			echo $this->element('comments', array('comments' => $walk['Comment']));
-			echo $this->element('comment-form', array('walk_id' => $walk['Walk']['id']));
+
+			if ($loggedIn) {
+				echo $this->element('comment-form', array('walk_id' => $walk['Walk']['id']));
+			} else {
+				echo $this->element('login-form');
+			}
 		?>
 	</div>
 </section>

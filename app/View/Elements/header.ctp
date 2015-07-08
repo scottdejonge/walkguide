@@ -16,10 +16,13 @@
 		<nav class="navigation right">
 			<ul>
 				<li>
-					<a href="#">
-						<?php echo $this->element('icon', array('name' => 'person')); ?>
-						<span class="hidden-xsmall">Profile</span>
-					</a>
+					<?php
+						if ($loggedIn) {
+							echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'view'));
+						} else {
+							echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'));
+						}
+					?>
 				</li>
 			</ul>
 		</nav>
