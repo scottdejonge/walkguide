@@ -9,7 +9,7 @@ class AppController extends Controller {
 		'Auth' => array(
 			'loginRedirect' => array(
                 'controller' => 'user',
-                'action' => 'profile',
+                'action' => 'view',
             ),
 			'logoutRedirect' => array(
 				'controller' => 'walks',
@@ -25,7 +25,7 @@ class AppController extends Controller {
 	);
 
 	public function beforeFilter() {
-		$this->Auth->allow('home', 'index', 'view', 'about');
+		$this->Auth->allow('home', 'index', 'view', 'display', 'about');
 		$this->set('loggedIn', $this->Auth->loggedIn());
 	}
 }

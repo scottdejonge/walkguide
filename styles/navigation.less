@@ -10,6 +10,7 @@
 		padding: 0;
 
 		li {
+			position: relative;
 			display: inline-block;
 			margin: 0;
 			padding: 0;
@@ -34,8 +35,68 @@
 					.icon {
 						fill: @white;
 					}
+
+					ul {
+						display: block;
+					}
 				}
-			}	
+			}
+
+			&:hover,
+			&:focus {
+				
+				ul {
+					display: block;
+				}
+				
+			}
+
+			ul {
+				display: none;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				padding-top: 15px;
+				width: 150px;
+				.translateY(100%);
+
+				&:before {
+					display: block;
+					position: absolute;
+					top: 5px;
+					right: 30px;
+					width: 0;
+					height: 0;
+					content: ' ';
+					border-right: 10px solid transparent;
+					border-bottom: 10px solid @white;
+					border-left: 10px solid transparent;
+				}
+
+				li {
+					display: block;
+
+					a {
+						.font-size(1.4);
+						color: @grey;
+						text-align: right;
+						background: @white;
+
+						.icon {
+							fill: @grey;
+						}
+
+						&:hover,
+						&:focus {
+							color: @primary;
+
+							.icon {
+								fill: @primary;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
