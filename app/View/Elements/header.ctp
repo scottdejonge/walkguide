@@ -19,9 +19,12 @@
 	);
 
 	$user_navigation = array(
-		$this->Html->link($username, array(
+		$this->Html->link($this->element('avatar') . $username, array(
 			'controller' => 'users',
 			'action' => 'view'
+		), array(
+			'class' => 'navigation-user',
+			'escape' => false
 		)) => array(
 			$this->Html->link('Edit Profile', array(
 				'controller' => 'users',
