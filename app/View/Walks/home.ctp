@@ -33,14 +33,20 @@
 
 <section class="tiles">
 	<div class="container">
-		<h2 class="title">Featured Walks</h2>
 		<?php
+			echo '<h2 class="title">' . __('Featured') . '</h2>';
 			foreach ($featured as $walk) {
 				echo $this->element('tile', array('walk' => $walk));
 			}
 		?>
-		<h2 class="title">Highest Rated Walks</h2>
+	</div>
+</section>
+
+
+<section class="tiles">
+	<div class="container">
 		<?php
+			echo '<h2 class="title">' . __('Highest Rated') . '</h2>';
 			foreach ($featured as $walk) {
 				echo $this->element('tile', array('walk' => $walk));
 			}

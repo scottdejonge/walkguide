@@ -4,31 +4,33 @@
 
 // Rating
 .rating-form {
-	margin-top: 10px;
+	margin-top: 5px;
+
+
+	input {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		opacity: 0;
+	}
+
+	label {
+		margin: 0;
+		display: inline-block;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.icon {
+		.square(16px);
+		fill: @light-grey;
+		vertical-align: middle;
+	}
 
 	span {
 		position: relative;
 		unicode-bidi: bidi-override;
 		direction: rtl;
-
-		input {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			opacity: 0;
-		}
-
-		label {
-			margin: 0;
-			display: inline-block;
-			.square(24px);
-			text-align: center;
-			cursor: pointer;
-		}
-
-		.icon {
-			fill: @light-grey;
-		}
 
 		&:hover,
 		&:focus,

@@ -16,6 +16,10 @@
 	height: 40px;
 	background: @white;
 
+	&:last-child {
+		margin-bottom: 0;
+	}
+
 	@media @small-up {
 		margin-bottom: 35px;
 		height: 100px;
@@ -47,14 +51,9 @@
 .tile-title {
 	margin: 0;
 	.truncate();
-	.font-size(1.4);
 
 	a {
 		color: @body-color;
-	}
-	
-	@media @small-up {
-		.font-size(1.8);
 	}
 }
 

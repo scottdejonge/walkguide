@@ -1,6 +1,9 @@
 // Turret
 @import '/turret/turret.less';
 
+// Fonts
+@import './fonts.less';
+
 // Theme
 @import './theme.less';
 
@@ -30,10 +33,13 @@
 
 body {
 	padding-top: @header-height;
+	letter-spacing: -0.035rem;
 }
 
 .title {
-	margin: 0px 0px 50px 0px;
+	.semibold-font();
+	letter-spacing: 0;
+	text-transform: uppercase;
 }
 
 .container-small {
