@@ -27,5 +27,6 @@ class AppController extends Controller {
 	public function beforeFilter() {
 		$this->Auth->allow('home', 'index', 'view', 'display', 'about');
 		$this->set('loggedIn', $this->Auth->loggedIn());
+		$this->set('userData', $this->Auth->user());
 	}
 }

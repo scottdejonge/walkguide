@@ -1,8 +1,5 @@
 <?php
 
-	$user = $this->session->read('Auth.User');
-	$username = $user['first_name'] . ' ' . $user['last_name'];
-
 	$navigation = array(
 		$this->Html->link('Home', array(
 			'controller' => 'walks',
@@ -19,7 +16,7 @@
 	);
 
 	$user_navigation = array(
-		$this->Html->link($this->element('avatar') . $username, array(
+		$this->Html->link($this->element('avatar') . $userData['first_name'] . ' ' . $userData['last_name'], array(
 			'controller' => 'users',
 			'action' => 'view'
 		), array(
