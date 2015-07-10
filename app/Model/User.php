@@ -22,25 +22,25 @@ class User extends AppModel {
 		'first_name' => array(
 			'required' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'A first name is required'
+				'message' => 'Please enter a first name'
 			)
 		),
 		'last_name' => array(
 			'required' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'A last name is required'
+				'message' => 'Please enter a last name'
 			)
 		),
 		'email' => array(
 			'required' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'An email address is required'
+				'message' => 'Please enter an email address'
 			)
 		),
 		'password' => array(
 			'required' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'A password is required'
+				'message' => 'Please enter a password'
 			)
 		),
 	);

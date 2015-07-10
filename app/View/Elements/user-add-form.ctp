@@ -1,4 +1,5 @@
 <?php
+	echo $this->Session->flash('auth');
 	echo $this->Form->create('User', array(
 		'inputDefaults' => array(
 			'div' => false,
@@ -10,6 +11,7 @@
 			),
 		)
 	));
+	echo '<h2>' . __('Sign Up') . '</h2>';
 	echo $this->Form->input('first_name', array('placeholder' => 'First Name'));
 	echo $this->Form->input('last_name', array('placeholder' => 'Last Name'));
 	echo $this->Form->input('email', array('placeholder' => 'Email'));
