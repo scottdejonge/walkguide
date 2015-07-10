@@ -9,6 +9,7 @@
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
 	Router::connect('/sign-up', array('controller' => 'users', 'action' => 'signup'));
+	Router::connect('/profile', array('controller' => 'users', 'action' => 'profile'));
 
 	// Walks
 	Router::connect('/walks/', array('controller' => 'walks', 'action' => 'index'));
