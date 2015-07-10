@@ -20,4 +20,26 @@ class Walk extends AppModel {
 	public function afterSaveAll($result) {
 		//$this->Rating->updateAllAverageRatings();
 	}
+
+	
+	/**
+	 * Methods
+	 */
+
+	public function getWalkComments($id) {
+		$comments = $this->Comment->find('all', array(
+			'conditions' => array(
+				'walk_id' => $id,
+			),
+			'contain' => array(
+				'User' => array(
+					'id',
+					'last_name',
+					'first_name',
+				),
+			),
+		));
+
+		return $comments;
+	}
 }

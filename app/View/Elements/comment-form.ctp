@@ -23,6 +23,12 @@
 		)
 	);
 
+	echo $this->Form->hidden(
+		'user_id', array(
+			'value' => $userData['id'],
+		)
+	);
+
 	echo $this->Form->input(
 		'comment', array(	
 			'type' => 'textarea',

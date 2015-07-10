@@ -1,33 +1,14 @@
 <section>
 		
-	<?php if (!empty($comments)) : ?>
-
-		<?php foreach ($comments as $comment) : ?>
-
-			<?php
-				if (isset($comment['Comment'])) {
-					$comment = $comment['Comment'];
-				}
-			?>
-
-			<article class="comment">
-
-				<figure class="comment-image">
-					<?php echo $this->element('icon', array('name' => 'flower')); ?>
-				</figure>
-				
-				<div class="comment-content">
-					<h3 class="comment-title">
-						<?php echo h($comment['User']['first_name']) . ' ' . h($comment['User']['last_name']); ?>
-						<small><?php echo $this->Time->format('d M', $comment['created']); ?></small>
-					</h3>
-					<p><?php echo h($comment['comment']); ?></p>
-				</div>
-				
-			</article>
-
-		<?php endforeach; ?>
-
-	<?php endif; ?>
+	<?php
+		if (!empty($comments)) {
+			echo '<h2>' . __('Comments') . '</h2>';
+			foreach ($comments as $comment) {
+				echo $this->element('comment', array('comment' => $comment));
+			}
+		} else {
+			echo '<h2>' . __('Add a Comment') . '</h2>';
+		}
+	?>
 	
 </section>

@@ -8,8 +8,8 @@ class Comment extends AppModel {
 	 */
 
 	public $belongsTo = 'User';
-	
-	
+
+
 	/**
 	 * Validation
 	 */

@@ -66,16 +66,20 @@ class WalksController extends AppController {
 	}
 
 	public function view() {
+		$walk_id = $this->request->params['id'];
+
 		$walk = $this->Walk->find('first', array(
 			'conditions' => array(
-				'Walk.id' => $this->request->params['id'],
+				'Walk.id' => $walk_id,
 			),
 			'contain' => array(
-				'Comment.User',
 				'Rating',
 			),
 		));
 
+		$comments = $this->Walk->getWalkComments($walk_id);
+
+		// Get Average Rating
 		$ratings = array();
 
 		foreach ($walk['Rating'] as $rating) {
@@ -92,7 +96,7 @@ class WalksController extends AppController {
 			throw new NotFoundException();
 		}
 
-		$this->set(compact('walk', 'average'));
+		$this->set(compact('walk', 'comments', 'average'));
 	}
 
 	public function kml() {
