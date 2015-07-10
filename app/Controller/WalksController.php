@@ -13,34 +13,24 @@ class WalksController extends AppController {
 
 		$featured = $this->Walk->find('all', array(
 			'limit' => 4,
-			'contain' => array(
+			'fields' => array(
 				'name',
 				'owner',
 				'category',
 				'type',
 				'group',
+				'region',
+				'grade',
 			),
 			'conditions' => array(
 				'Walk.featured' => 1,
 			),
-		));
-
-		$rated = $this->Walk->find('all', array(
-			'limit' => 4,
 			'contain' => array(
-				'name',
-				'owner',
-				'category',
-				'type',
-				'group',
-				'Rating',
-			),
-			'conditions' => array(
-				'Walk.featured' => 1,
-			),
+				'Rating'
+			)
 		));
 
-		$this->set(compact('featured', 'rated'));
+		$this->set(compact('featured'));
 	}
 
 	public function index() {
