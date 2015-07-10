@@ -44,7 +44,7 @@
 			if ($loggedIn) {
 				echo $this->element('comment-form', array('walk_id' => $walk['Walk']['id']));
 			} else {
-				echo $this->element('user-login-form');
+				echo '<p class="text-center">' . __('You must be ' . $this->Html->link('logged in', array('controller' => 'users', 'action' => 'login')) . ' in to post a comment.') . '</p>';
 			}
 		?>
 	</div>
