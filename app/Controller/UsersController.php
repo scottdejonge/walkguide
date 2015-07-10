@@ -11,7 +11,7 @@ class UsersController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 		// Allow users to register and logout.
-		$this->Auth->allow('signup', 'logout');
+		$this->Auth->allow('add', 'logout');
 	}
 
 
@@ -24,7 +24,7 @@ class UsersController extends AppController {
 		$this->set('users', $this->paginate());
 	}
 
-	public function profile($id = null) {
+	public function view($id = null) {
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
@@ -50,7 +50,7 @@ class UsersController extends AppController {
 		return $this->redirect($this->Auth->logout());
 	}
 
-	public function signup() {
+	public function add() {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
