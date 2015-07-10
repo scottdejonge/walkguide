@@ -25,8 +25,14 @@
 				</svg>
 			<?php endif; ?>
 			<h1 class="page-header-title"><?php echo $name; ?></h1>
-			<h2 class="page-header-subtitle"><?php echo $owner; ?></h2>
-			<p><?php echo $category . '. ' . $type . '. ' . $region . '. '.  $group ?></p>
+			<h2 class="page-header-subtitle"><?php echo $type; ?></h2>
+			<h3>
+				<?php
+					echo (!empty($walk['Walk']['region'])) ? $walk['Walk']['region'] . '. ' : '';
+					echo (!empty($walk['Walk']['owner'])) ? $walk['Walk']['owner'] . '. ' : '';
+					echo (!empty($walk['Walk']['group'])) ? $walk['Walk']['group'] . '. ' : '';
+				?>
+			</h3>
 			<?php echo $this->element('rating-form', array('walk' => $walk, 'average' => $average)); ?>
 		</div>
 	</div>
