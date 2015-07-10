@@ -8,8 +8,8 @@ class AppController extends Controller {
 		'Session',
 		'Auth' => array(
 			'loginRedirect' => array(
-                'controller' => 'walks',
-                'action' => 'index'
+                'controller' => 'user',
+                'action' => 'profile'
             ),
 			'logoutRedirect' => array(
 				'controller' => 'walks',

@@ -5,6 +5,11 @@
 	// Home
 	Router::connect('/', array('controller' => 'walks', 'action' => 'home'));
 
+	// Users
+	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
+	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
+	Router::connect('/sign-up', array('controller' => 'users', 'action' => 'signup'));
+
 	// Walks
 	Router::connect('/walks/', array('controller' => 'walks', 'action' => 'index'));
 

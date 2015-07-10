@@ -17,10 +17,24 @@
 			<ul>
 				<li>
 					<?php
+						if (!$loggedIn) {
+							echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'));
+						}
+					?>
+				</li>
+				<li>
+					<?php
 						if ($loggedIn) {
-							echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'view'));
+							echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'profile'));
 						} else {
-							echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'add'));
+							echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'signup'));
+						}
+					?>
+				</li>
+				<li>
+					<?php
+						if (!$loggedIn) {
+							echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'));
 						}
 					?>
 				</li>
