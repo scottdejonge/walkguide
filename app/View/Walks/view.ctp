@@ -46,7 +46,7 @@
 			if ($loggedIn) {
 				echo $this->element('comment-form', array('walk_id' => $walk['Walk']['id']));
 			} else {
-				echo $this->element('login-form');
+				echo $this->element('user-login-form');
 			}
 		?>
 	</div>

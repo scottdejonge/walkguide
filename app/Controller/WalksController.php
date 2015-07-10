@@ -4,6 +4,11 @@ App::uses('AppController', 'Controller');
 
 class WalksController extends AppController {
 	
+
+	/**
+	 * Views
+	 */
+
 	public function home() {
 
 		$featured = $this->Walk->find('all', array(
@@ -66,7 +71,7 @@ class WalksController extends AppController {
 				'Walk.id' => $this->request->params['id'],
 			),
 			'contain' => array(
-				'Comment',
+				'Comment.User',
 				'Rating',
 			),
 		));
@@ -100,8 +105,6 @@ class WalksController extends AppController {
 			),
 		));
 
-		//pr(h($walk)); die;
-
 		if (!$walk) {
 			throw new NotFoundException();
 		}
@@ -111,6 +114,11 @@ class WalksController extends AppController {
 		$this->response->type("application/vnd.google-earth.kml+xml");
 		$this->render('kml/kml', 'xml');
 	}
+
+
+	/**
+	 * Functions
+	 */
 
 	// Updated Null
 	public function points() {

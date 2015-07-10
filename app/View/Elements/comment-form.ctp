@@ -24,30 +24,9 @@
 	);
 
 	echo $this->Form->input(
-		'first_name', array(
-			'placeholder' => 'Enter your first name',
-			'type' => 'text',
-		)
-	);
-
-	echo $this->Form->input(
-		'last_name', array(
-			'placeholder' => 'Enter your last name',
-			'type' => 'text',
-		)
-	);
-	
-	echo $this->Form->input(
-		'email', array(
-			'placeholder' => 'Enter your email address',
-			'type' => 'text',
-		)
-	);
-
-	echo $this->Form->input(
 		'comment', array(	
 			'type' => 'textarea',
-			'placeholder' => 'Write a review',
+			'placeholder' => 'Write a comment',
 			'rows' => '5',
 		)
 	);
