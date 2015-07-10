@@ -15,8 +15,10 @@
 		))
 	);
 
+	$user_avatar = $this->element('avatar') . '<span class="hidden-small-down">' . $userData['first_name'] . ' ' . $userData['last_name'] . '</span>';
+
 	$user_navigation = array(
-		$this->Html->link($this->element('avatar') . $userData['first_name'] . ' ' . $userData['last_name'], array(
+		$this->Html->link($user_avatar, array(
 			'controller' => 'users',
 			'action' => 'view'
 		), array(
