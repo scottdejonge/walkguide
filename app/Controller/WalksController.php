@@ -46,16 +46,21 @@ class WalksController extends AppController {
 	public function index() {
 		$this->paginate = array(
 			'limit' => 20,
-			'contain' => array(
+			'fields' => array(
 				'name',
 				'owner',
 				'category',
 				'type',
 				'group',
+				'region',
+				'grade',
 			),
 			'conditions' => array(
 				'not' => array('Walk.name' => null),
 				'Walk.type' => 'Walking Track',
+			),
+			'contain' => array(
+				'Rating'
 			),
 			'order' => array('id' => 'desc')
 		);
