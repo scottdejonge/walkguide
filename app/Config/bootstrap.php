@@ -27,6 +27,10 @@ Cache::config('default', array('engine' => 'File'));
 
 config('site');
 
+if (!config('config')) {
+	die('Config not loaded');
+}
+
 /**
  * Extra content types
  */
