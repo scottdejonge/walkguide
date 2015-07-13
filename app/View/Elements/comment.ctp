@@ -1,6 +1,8 @@
 <article class="comment">
 
-	<?php echo $this->element('avatar'); ?>
+	<figure class="avatar" style="background: <?php echo $comment['User']['avatar_color'] ?>">
+		<?php echo $this->Html->image('/assets/avatars/' . $comment['User']['avatar_icon'] . '.svg', array('alt' => '')); ?>
+	</figure>
 
 	<div class="comment-content">
 		<h3 class="comment-title">

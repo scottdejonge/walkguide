@@ -36,6 +36,8 @@ class Walk extends AppModel {
 					'id',
 					'last_name',
 					'first_name',
+					'avatar_icon',
+					'avatar_color',
 				),
 			),
 		));
