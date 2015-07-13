@@ -33,7 +33,13 @@
 					echo (!empty($walk['Walk']['group'])) ? $walk['Walk']['group'] . '. ' : '';
 				?>
 			</h3>
-			<?php echo $this->element('rating-form', array('walk' => $walk, 'average' => $average)); ?>
+			<?php
+				if ($loggedIn) {
+					echo $this->element('rating-form', array('walk' => $walk, 'average' => $average));
+				} else {
+					echo $this->element('rating-form', array('walk' => $walk, 'average' => $average));
+				}
+			?>
 		</div>
 	</div>
 </section>
