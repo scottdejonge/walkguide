@@ -11,7 +11,7 @@
 			),
 		)
 	));
-	echo '<h2>' . __('Edit') . '</h2>';
+	echo '<h2>' . __('Settings') . '</h2>';
 	echo $this->Form->input('first_name', array('placeholder' => 'First Name'));
 	echo $this->Form->input('last_name', array('placeholder' => 'Last Name'));
 	echo $this->Form->input('email', array('placeholder' => 'Email'));

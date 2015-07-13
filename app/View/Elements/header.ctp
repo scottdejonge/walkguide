@@ -25,7 +25,7 @@
 			'class' => 'navigation-user',
 			'escape' => false
 		)) => array(
-			$this->Html->link('Edit Profile', array(
+			$this->Html->link('Settings', array(
 				'controller' => 'users',
 				'action' => 'edit'
 			)),

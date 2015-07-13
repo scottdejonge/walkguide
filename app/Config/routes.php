@@ -10,7 +10,7 @@
 	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
 	Router::connect('/sign-up', array('controller' => 'users', 'action' => 'add'));
 	Router::connect('/profile', array('controller' => 'users', 'action' => 'view'));
-	Router::connect('/profile/edit', array('controller' => 'users', 'action' => 'edit'));
+	Router::connect('/profile/settings', array('controller' => 'users', 'action' => 'edit'));
 
 	// Walks
 	Router::connect('/walks/', array('controller' => 'walks', 'action' => 'index'));
