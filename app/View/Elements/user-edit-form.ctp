@@ -9,6 +9,7 @@
 	echo $this->Session->flash('auth');
 	echo $this->Form->create('User', array(
 		'inputDefaults' => array(
+			'styledControl' => true,
 			'div' => false,
 			'error' => array(
 				'attributes' => array(
@@ -33,6 +34,7 @@
 	echo $this->Form->input('avatar_icon', array('options' => $icons, 'label' => false));
 	echo '</label>';
 	echo $this->Form->radio('avatar_color', $colors, array('legend' => false));
+	echo '<br>';
 	echo $this->Form->button('Save', array('type' => 'submit', 'class' => 'button-primary'));
 
 	echo $this->Form->end();

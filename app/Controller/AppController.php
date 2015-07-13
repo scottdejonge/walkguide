@@ -4,6 +4,11 @@ App::uses('Controller', 'Controller');
 
 class AppController extends Controller {
 
+	public $helpers = array(
+		'Form' => array('className' => 'MagicForm'),
+		'Text',
+	);
+
 	public $components = array(
 		'Session',
 		'Auth' => array(
