@@ -49,7 +49,21 @@ class UsersController extends AppController {
 			)
 		));
 
-		$this->set(compact('user'));
+		$items = array();
+
+		foreach ($user['Comment'] as $comment) {
+			$items[] = $comment;
+		}
+
+		foreach ($user['Rating'] as $rating) {
+			$items[] = $rating;
+		}
+
+		if (sizeof($items) > 1) {
+			$items = Set::sort($items, '/created', 'DESC');
+		}
+
+		$this->set(compact('items'));
 	}
 
 

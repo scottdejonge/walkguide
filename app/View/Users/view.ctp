@@ -15,50 +15,37 @@
 <section class="feed">
 	<div class="container">
 
-		<?php foreach ($user['Comment'] as $comment) : ?>
+		<?php foreach ($items as $item) : ?>
 
 			<article class="feed-item">
 				<h3>
-					<?php echo h($user['User']['first_name']) . ' ' . h($user['User']['last_name']); ?>
-					<small>commented on</small>
 					<?php
+						echo h($user['User']['first_name']) . ' ' . h($user['User']['last_name']);
+
+						if (isset($item['comment'])) {
+							echo '<small>commented on</small>';
+						} else {
+							echo '<small>rated</small>';
+						}
+
 						echo $this->Html->link(
-							h($comment['Walk']['name']),
+							h($item['Walk']['name']),
 							array(
 								'controller' => 'walks',
 								'action' => 'view',
-								$comment['Walk']['id']
+								$item['Walk']['id']
 							)
 						);
 					?>
-					<small><?php echo $this->Time->format('d M', $comment['created']); ?></small>
+					<small><?php echo $this->Time->format('d M', $item['created']); ?></small>
 				</h3>
-				
-				<p><?php echo h($comment['comment']); ?></p>
-			</article>
-
-		<?php endforeach; ?>
-
-		<?php foreach ($user['Rating'] as $rating) : ?>
-
-			<article class="feed-item">
-				<h3>
-					<?php echo h($user['User']['first_name']) . ' ' . h($user['User']['last_name']); ?>
-					<small>rated</small>
-					<?php
-						echo $this->Html->link(
-							h($rating['Walk']['name']),
-							array(
-								'controller' => 'walks',
-								'action' => 'view',
-								$rating['Walk']['id']
-							)
-						);
-					?>
-					<small><?php echo $this->Time->format('d M', $rating['created']); ?></small>
-				</h3>
-				
-				<p><?php echo h($rating['rating']); ?></p>
+				<?php
+					if (isset($item['comment'])) {
+						echo '<p>' . h($item['comment']) . '</p>';
+					} else {
+						echo h($item['rating']);
+					}
+				?>
 			</article>
 
 		<?php endforeach; ?>
