@@ -7,7 +7,10 @@ class Rating extends AppModel {
 	 * Relationships
 	 */
 
-	public $belongsTo = 'User';
+	public $belongsTo = array(
+		'User',
+		'Walk',
+	);
 	
 	
 	/**

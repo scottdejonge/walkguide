@@ -32,6 +32,24 @@ class UsersController extends AppController {
 		}
 
 		$this->set('user', $this->User->read(null, $id));
+
+		$user = $this->User->find('first', array(
+			'conditions' => array(
+				'User.id' => $this->User->id
+			),
+			'contain' => array(
+				'Comment' => array(
+					'Walk.id',
+					'Walk.name',
+				),
+				'Rating' => array(
+					'Walk.id',
+					'Walk.name',
+				),
+			)
+		));
+
+		$this->set(compact('user'));
 	}
 
 

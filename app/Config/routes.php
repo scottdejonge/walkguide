@@ -23,6 +23,7 @@
 
 	// Walk Views
 	Router::connect('/walks/:id', array('controller' => 'walks', 'action' => 'view'));
+	Router::connect('/walks/view/:id', array('controller' => 'walks', 'action' => 'view'));
 	Router::connect('/walks/:id/kml', array('controller' => 'walks', 'action' => 'kml'));
 
 	// Pages
