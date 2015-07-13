@@ -43,6 +43,18 @@ class User extends AppModel {
 				'message' => 'Please enter a password'
 			)
 		),
+		'avatar_icon' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please select an icon'
+			)
+		),
+		'avatar_color' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please select a color'
+			)
+		),
 	);
 
 
