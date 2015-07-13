@@ -50,9 +50,25 @@ class User extends AppModel {
 	 * Static Data
 	 */
 	
-	public function getAvatarIcons() {
+	public function getAvatarIconList() {
 		return array(
+			'person' => 'Person',
 			'flower' => 'Flower',
+			'walk' => 'Walk',
+			'run' => 'Run',
+			'bike' => 'Bike',
+			'camera' => 'Camera',
+			'landscape' => 'Landscape',
+		);
+	}
+
+	public function getAvatarColorList() {
+		return array(
+			'#2ECC71' => 'Green',
+			'#3498DB' => 'Blue',
+			'#9B59B6' => 'Purple',
+			'#E74C3C' => 'Red',
+			'#F1C40F' => 'Yellow',
 		);
 	}
 

@@ -21,25 +21,30 @@
 	@media @xsmall {
 		padding-left: 50px;
 	}
+
+	.avatar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		.square(60px);
+		border-radius: 100px;
+
+		@media @xsmall {
+			.square(30px);
+		}
+		
+		img,
+		.icon {
+			.center();
+			.square(24px);
+			fill: @white;
+		}
+	}
 }
 
 // Comment Image
 .comment-image {
-	position: absolute;
-	top: 0;
-	left: 0;
-	.square(60px);
-	background: @primary;
-	border-radius: 100px;
-
-	@media @xsmall {
-		.square(30px);
-	}
-
-	.icon {
-		.center();
-		fill: @white;
-	}
+	
 }
 
 // Comment Content

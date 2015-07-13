@@ -1,4 +1,11 @@
 <?php
+	
+	// Variables
+	$model = ClassRegistry::init('User');
+	$icons = $model->getAvatarIconList();
+	$colors = $model->getAvatarColorList();
+	
+	// Form
 	echo $this->Session->flash('auth');
 	echo $this->Form->create('User', array(
 		'inputDefaults' => array(
@@ -22,25 +29,9 @@
 	echo '<hr>';
 
 	echo '<h2>' . __('Avatar') . '</h2>';
-
-	$avatar_icons = array(
-		'flower' => 'Flower',
-	);
-
-	echo $this->Form->input('avatar_icon', array('options' => $avatar_icons));
-	echo $this->Form->button('Save', array('type' => 'submit', 'class' => 'button-primary'));
-
-	echo '<hr>';
-
-	echo '<h2>' . __('Theme') . '</h2>';
-
-	$colors = array(
-		'#2ECC71' => 'Green',
-		'#3498DB' => 'Blue',
-		'#9B59B6' => 'Purple',
-		'#E74C3C' => 'Red',
-		'#F1C40F' => 'Yellow',
-	);
+	echo '<label class="select">';
+	echo $this->Form->input('avatar_icon', array('options' => $icons, 'label' => false));
+	echo '</label>';
 	echo $this->Form->radio('avatar_color', $colors, array('legend' => false));
 	echo $this->Form->button('Save', array('type' => 'submit', 'class' => 'button-primary'));
 

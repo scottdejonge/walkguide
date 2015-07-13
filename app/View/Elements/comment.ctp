@@ -1,9 +1,7 @@
 <article class="comment">
 
-	<figure class="comment-image">
-		<?php echo $this->element('icon', array('name' => 'flower')); ?>
-	</figure>
-	
+	<?php echo $this->element('avatar'); ?>
+
 	<div class="comment-content">
 		<h3 class="comment-title">
 			<?php echo h($comment['User']['first_name']) . ' ' . h($comment['User']['last_name']); ?>
