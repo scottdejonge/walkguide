@@ -47,6 +47,17 @@ class User extends AppModel {
 
 
 	/**
+	 * Static Data
+	 */
+	
+	public function getAvatarIcons() {
+		return array(
+			'flower' => 'Flower',
+		);
+	}
+
+
+	/**
 	 * Callbacks
 	 */
 
