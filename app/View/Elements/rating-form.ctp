@@ -15,6 +15,12 @@
 			'value' => isset($walk['Walk']['id']) ? $walk['Walk']['id'] : null,
 		)
 	);
+
+	echo $this->Form->hidden(
+		'user_id', array(
+			'value' => $userData['id'],
+		)
+	);
 ?>
 
 <?php for ($i = 5; $i > 0; $i--) : ?>
