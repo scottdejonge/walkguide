@@ -25,7 +25,7 @@ class UsersController extends AppController {
 	}
 
 	public function view($id = null) {
-		$this->User->id = $id;
+		$this->User->id = $this->Auth->user('id');
 
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
@@ -76,7 +76,7 @@ class UsersController extends AppController {
 
 	// Edit
 	public function edit($id = null) {
-		$this->User->id = $id;
+		$this->User->id = $this->Auth->user('id');
 
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
