@@ -6,7 +6,7 @@
 			'error' => array(
 				'attributes' => array(
 					'wrap' => 'p',
-					'class' => 'form-message floating-form-message error'
+					'class' => 'form-message error'
 				),
 			),
 		)
