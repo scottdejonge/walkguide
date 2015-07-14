@@ -33,13 +33,48 @@
 					echo (!empty($walk['Walk']['group'])) ? $walk['Walk']['group'] . '. ' : '';
 				?>
 			</h3>
-			<?php
-				if ($loggedIn) {
-					echo $this->element('rating-form', array('walk' => $walk, 'average' => $average));
-				} else {
-					echo $this->element('rating-form', array('walk' => $walk, 'average' => $average));
-				}
-			?>
+		</div>
+	</div>
+</section>
+
+<section class="details">
+	<div class="container">
+		<div class="row">
+			<div class="column-1-3 column-small-1-2 column-push-2-3 column-push-small-1-2 gutter-bottom">
+				<section class="widget">
+					<button class="button-large button-block">Favourite</button>
+					<?php
+						if ($loggedIn) {
+							echo $this->element('rating-form', array('walk' => $walk, 'average' => $average));
+						} else {
+							echo $this->element('rating-form', array('walk' => $walk, 'average' => $average));
+						}
+					?>
+					<div class="button-group button-group-block">
+						<div class="button-group">
+							<button class="button-large">Media</button>
+						</div>
+						<div class="button-group">
+							<button class="button-large">Comments</button>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="column-2-3 column-small-1-2 column-pull-1-3 column-pull-small-1-2">
+				<h3>Description</h3>
+				<p>Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor.</p>
+				<h3>Details</h3>
+				<dl>
+					<dt>Distance</dt>
+					<dd>2km</dd>
+					<dt>Duration</dt>
+					<dd>2 hours</dd>
+					<dt></dt>
+					<dd></dd>
+					<dt></dt>
+					<dd></dd>
+				</dl>
+			</div>
 		</div>
 	</div>
 </section>

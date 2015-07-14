@@ -39,10 +39,6 @@
 		$this->Html->link('Login', array(
 			'controller' => 'users',
 			'action' => 'login'
-		)),
-		$this->Html->link('Sign Up', array(
-			'controller' => 'users',
-			'action' => 'add'
 		))
 	);
 
