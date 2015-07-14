@@ -42,7 +42,6 @@
 	</div>
 </section>
 
-
 <section class="tiles">
 	<div class="container">
 		<?php
@@ -51,5 +50,11 @@
 				echo $this->element('tile', array('walk' => $walk));
 			}
 		?>
+	</div>
+</section>
+
+<section class="sign-up">
+	<div class="container">
+		<?php echo $this->element('user-add-form'); ?>
 	</div>
 </section>
