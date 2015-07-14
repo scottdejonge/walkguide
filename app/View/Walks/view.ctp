@@ -52,10 +52,16 @@
 					?>
 					<div class="button-group button-group-block">
 						<div class="button-group">
-							<button class="button-large">Media</button>
+							<button class="button-large">
+								<?php echo $this->element('icon', array('name' => 'camera')); ?>
+								Media
+							</button>
 						</div>
 						<div class="button-group">
-							<button class="button-large">Comments</button>
+							<button class="button-large">
+								<?php echo $this->element('icon', array('name' => 'marker-comment')); ?>
+								Comments
+							</button>
 						</div>
 					</div>
 				</section>
