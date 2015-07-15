@@ -4,8 +4,11 @@
 
 // Widget
 .widget {
-	margin-top: -100px;
 	background: @white;
+
+	@media @small-up {
+		margin-top: -100px;
+	}
 
 	button {
 		border-radius: 0;

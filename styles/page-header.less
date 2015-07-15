@@ -4,11 +4,18 @@
 
 // Page Header
 .page-header {
-	background: @primary;
+	height: 50vh;
+	background: @dark;
+
+	.container {
+		height: 100%;
+	}
 }
 
 .page-header-content {
-	padding: 100px 0px;
+	position: absolute;
+	bottom: @gutter;
+	left: (@gutter / 2);
 	
 	h1,
 	h2,
